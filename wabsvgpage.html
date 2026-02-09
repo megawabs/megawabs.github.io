@@ -1,0 +1,5154 @@
+<!DOCTYPE html>
+
+
+<!--
+TO DO LIST :
+
+- vérif svgdes mgs4 et gh warriors of rock quand j'aurai récupéré ces deux jeux
+- nb voitures différentes gt5
+- vérif lien records solo pdark
+
+
+DEJA VERIF
+
+- ygo check de 2005 à 2025 inclus
+- trophees ps3 check
+- sauvegardes n64, ps2, ps3 et switch
+
+-->
+
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wabs's Videogame Page</title>
+<style>
+    /* Styles globaux */
+    body {
+        background-color: #ffffff;
+        color: #000;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1, h2, h3 {
+        text-align: center;
+        margin-top: 20px;
+    }
+	
+	h4 {
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    h1 { color: #ff9900; }
+    h2, h3 { color: #ff9900; margin-top: 30px; }
+    h4 { color: #000; }
+    .note { color: #f00; text-decoration: underline; }
+
+    img.logo {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Tables */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        table-layout: fixed;
+    }
+
+    th, td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+        vertical-align: top;
+        word-wrap: break-word;
+    }
+
+    th { background-color: #f2f2f2; }
+    tr:nth-child(even) { background-color: #fafafa; }
+
+    /* Colonnes spécifiques */
+    .date-col { width: 150px; white-space: nowrap; color: #008000; }
+    .game-col { width: 200px; color: #ff0000;}
+	.console-col { width: 150px; color: #0000aa; font-weight: bold; white-space: nowrap;}
+    .details-col { width: calc(100% - 350px); }
+
+    /* Blocs par année */
+    .year-block {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #008000;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+	
+	.year-block.active { background-color: #005500; }
+	
+	.table-container { display: none; }
+	
+	/* Blocs par Console */
+    .console-block {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #008000;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+	.console-block.active { background-color: #005500; }
+
+	.console-container { display: none; }
+	
+	.weapon {
+        color: black;
+		font-style : italic
+    }
+
+    .bronze { color: #cd7f32; }
+    .silver { color: silver; }
+    .gold   { color: gold; }
+	.red {color: red}
+	.green {color: green}
+	
+	.cell-merge {
+		text-align: center;
+		vertical-align: middle;
+	}
+	
+	.game-title {
+		color : blue;
+	}
+
+	.underline {
+		text-decoration : underline;
+	}
+	
+	
+
+	.buttons {
+		display: flex;
+		justify-content: center; /* centre horizontalement */
+		gap: 10px;               /* espace entre les boutons */
+		margin-bottom: 20px;
+	}
+
+    button {
+        margin-right: 10px;
+        padding: 8px 12px;
+        cursor: pointer;
+    }
+
+    .section {
+        display: none; /* cachées par défaut */
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #ccc;
+    }
+	
+
+</style>
+</head>
+<body>
+
+
+
+
+
+<h1>Wabs's Video Games Achievements</h1>
+
+<h4>
+    Bienvenue sur ma page vidéoludique, sur laquelle j'essaierai de dresser la liste des jeux que j'ai finis 
+    et de récapituler mes meilleurs scores pour certains d'entre eux.
+</h4>
+
+
+<div class="buttons">
+    <button onclick="showSection(1)">FAQ</button>
+    <button onclick="showSection(2)">Historique</button>
+    <button onclick="showSection(3)">Liste</button>
+    <button onclick="showAll()">Tout afficher</button>
+</div>
+	
+	
+	
+	
+<div id="section1" class="section">
+
+<ul>
+	<li><b>Pourquoi cette page ?</b><br>
+		Cette page me sert avant tout d'archive personnelle. Je n'aime pas avoir de doute sur ce que j'ai fait ou pas dans un jeu alors je note tout.<br>
+		Il n'y a pas d'intention de comparaison ni de compétition derrière cette démarche, juste la volonté de ne rien oublier.
+	</li><br>
+	<li><b>Fini à 100% ?</b><br>
+		J'ai un profil de joueur complétionniste. J'ai toujours préféré jouer beaucoup à peu de jeux que l'inverse. J'essaie donc souvent de finir mes jeux préférés à 100%. 
+		Néanmoins, les seuls pourcentages indiqués sur cette page sont ceux qui sont indiqués par les jeux eux-mêmes. Pourquoi ? 
+		Pour éviter l'arbitraire : qu'est-ce que ça veut dire finir un jeu à 100% ? Dans toutes les difficultés ? Avec tous les personnages ? Avec toutes les upgrades ? 
+		Un exemple : beaucoup de joueurs considèrent qu'ils ont fini Hadès à 100% lorsqu'ils ont remporté 100% des succès. 
+		Premièrement, je considère que 100% des succès, ce n'est pas la même chose que 100% d'un jeu. Il reste encore beaucoup à faire dans Hades quand on a eu tous les succès : 
+		upgrades des armes, achats auprès du contremaître, grades du directeur des ressources, etc. Deuxièmement, tout le monde ne joue pas sur Steam. 
+		Pour cette raison, je préfère décrire précisément ce que j'ai fait ou non dans un jeu, plutôt que d'indiquer un pourcentage, qui ne sera pas univoque.
+	</li><br>
+	<li><b>PAL ou NTSC ?</b><br>
+		Par défaut, je joue en PAL. Dans le cas contraire, c'est précisé. Lorsque j'indique malgré tout qu'il s'agit d'une version PAL, 
+		c'est qu'il y a un écart significatif avec la version NTSC.
+	</li><br>
+	<li><b>Triche ?</b><br>
+		<ul>
+			<li>Ni cheat code, ni manette turbo, action replay, émulateur, savestate, rien de tout ça.</li>
+			<li>Sauf mention contraire, j'utilise les options, réglages et modes par défaut. Pas de mode assisté dans Celeste par exemple !</li>
+			<li>Il peut m'arriver d'utiliser certains glitchs lorsqu'ils sont admis par la communauté (exemple le glitch de Defection dans Perfect Dark), 
+				mais je n'utilise pas de glitch qui dénature le jeu ou l'épreuve (exemple : le "truc" du Laptop Gun dans le stand de tir du même jeu).</li>
+			<li>Généralement, je joue sans soluce, le plus longtemps possible. Sur certains jeux, il peut m'arriver de basculer vers une soluce pour la complétionnite. 
+				Exemple : j'ai trouvé tous les sanctuaires de Breath of the Wild sans soluce. Mais pas tous les korogus ! ^^</li>
+		</ul>
+	</li><br>
+	<li><b>Succès/Trophées</b><br>
+		Je n'y suis pas particulièrement attaché, je ne les mentionne donc pas systématiquement, seulement ceux que j'ai chassés spécifiquement.
+	</li>
+</ul>
+
+</div>
+
+
+<div id="section2" class="section">
+
+<h2>Mises à jour :</h2>
+
+<!-- Blocs par année -->
+<div id="yearBlocks">
+	<div class="year-block" onclick="showTable('2025-2029')">2025-2029</div>
+	<div class="year-block" onclick="showTable('2020-2024')">2020-2024</div>
+	<div class="year-block" onclick="showTable('2015-2019')">2015-2019</div>
+	<div class="year-block" onclick="showTable('2010-2014')">2010-2014</div>
+	<div class="year-block" onclick="showTable('2005-2009')">2005-2009</div>
+    <div class="year-block" onclick="showTable('2000-2004')">2000-2004</div>
+</div>
+
+
+
+
+<!-- Conteneurs des tableaux -->
+
+<div id="2025-2029" class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th class="date-col">Date</th>
+                <th class="game-col">Jeu</th>
+				<th class="console-col">Console</th>
+                <th class="details-col">Détails</th>
+            </tr>
+        </thead>
+        <tbody>
+			<tr>
+                <td class="update-date">8 février 2026</td>
+                <td>Ori</td>
+				<td>Switch</td>
+                <td>Fini en Facile en 2h10m43s avec 54/57 succès</td>
+            </tr>
+			<tr>
+                <td class="update-date">5 février 2026</td>
+                <td>Ori</td>
+				<td>Switch</td>
+                <td>100% en Difficile avec 52/57 succès</td>
+            </tr>
+			<tr>
+                <td class="update-date">1er février 2026</td>
+                <td>Ori</td>
+				<td>Switch</td>
+                <td>Fini en Difficile à 91% avec 49/57 succès</td>
+            </tr>
+		    <tr>
+                <td class="update-date">22 janvier 2026</td>
+                <td>Ori</td>
+				<td>Switch</td>
+                <td>Fini en Normal à 100% avec 43/57 succès</td>
+            </tr>
+		    <tr>
+                <td class="update-date">21 janvier 2026</td>
+                <td>Ori</td>
+				<td>Switch</td>
+                <td>Fini en Normal à 75%</td>
+            </tr>
+            <tr>
+                <td class="update-date">20 janvier 2026</td>
+                <td>Cookie Clicker</td>
+				<td>PC</td>
+                <td>Suite à la sortie de la v. 2.058, obtention de la 717ème et dernière upgrade</td>
+            </tr>
+            <tr>
+                <td class="update-date">31 octobre 2025</td>
+                <td>Hades</td>
+				<td>Switch</td>
+                <td>Toutes les heat de 1 à 16 finies avec toutes les armes (soit 96 runs)</td>
+            </tr>
+            <tr>
+                <td class="update-date">26 octobre 2025</td>
+                <td>Hades</td>
+				<td>Switch</td>
+                <td>Tous les aspects de toutes les armes upgradés au max et tous les achats du contremaître effectués</td>
+            </tr>
+            <tr>
+                <td class="update-date">22 octobre 2025</td>
+                <td>Hades</td>
+				<td>Switch</td>
+                <td>Toutes les entrées du codex (121/121) complétées</td>
+            </tr>
+            <tr>
+                <td class="update-date">1er octobre 2025</td>
+                <td>Mario Kart World</td>
+				<td>Switch 2</td>
+                <td>Tous les personnages débloqués</td>
+            </tr>
+            <tr>
+                <td class="update-date">13 septembre 2025</td>
+                <td>Hades</td>
+				<td>Switch</td>
+                <td>Toutes les entrées du codex découvertes et 116/121 complétées (manquent Érèbe, Carte de fidélité, Enclume du destin, Calamitraie et Esturgeon)</td>
+            </tr>
+            <tr>
+                <td class="update-date">13 août 2025</td>
+                <td>Hades</td>
+				<td>Switch</td>
+                <td>Tous les souvenirs et compagnons upgradés au max</td>
+            </tr>
+            <tr>
+                <td class="update-date">11 août 2025</td>
+                <td>Hades</td>
+				<td>Switch</td>
+                <td>Fini en 32 heat</td>
+            </tr>
+            <tr>
+                <td class="update-date">2 août 2025</td>
+                <td>Mario Kart World</td>
+				<td>Switch 2</td>
+                <td><i>Balade</i> : 150/150 panneaux trouvés</td>
+            </tr>
+			
+			<tr>
+				<td class="update-date">30 juillet 2025</td>
+				<td>Donkey Kong Bananza</td>
+				<td>Switch 2</td>
+				<td>Fini avec la 3è et dernière fin (donc avec 777/777 cristaux et 696/696 fossiles), mais aussi 110/110 disques, 1000 bananes (max) et compétences au max</td>
+			</tr>
+			<tr>
+				<td class="update-date">29 juillet 2025</td>
+				<td>Donkey Kong Bananza</td>
+				<td>Switch 2</td>
+				<td>Fini avec la 2è fin et 769/777 cristaux, 696/696 fossiles et 930 bananes</td>
+			</tr>
+			<tr>
+				<td class="update-date">23 juillet 2025</td>
+				<td>Donkey Kong Bananza</td>
+				<td>Switch 2</td>
+				<td>Fini avec 461 bananes</td>
+			</tr>
+			<tr>
+				<td class="update-date">18 juillet 2025</td>
+				<td>Hollow Knight</td>
+				<td>Switch</td>
+				<td>Fini avec la fin numéro 3 ("Fin des rêves") et avec la fin bonus ("La fin d'une ère")</td>
+			</tr>
+			<tr>
+				<td class="update-date">16 juillet 2025</td>
+				<td>Hollow Knight</td>
+				<td>Switch</td>
+				<td>Fini avec la fin numéro 2 ("Frères et soeurs scellés"), syntoniseur divin obtenu --> jeu fini à 108% (tout sauf les panthéons)<br>Journal du chasseur complété avec 156 entrées</td>
+			</tr>
+			<tr>
+				<td class="update-date">15 juillet 2025</td>
+				<td>Hollow Knight</td>
+				<td>Switch</td>
+				<td>Colisée des fous fini --> jeu fini à 107% (donc 100% pour le jeu de base)<br>Journal du chasseur complété (toutes entrées obligatoires obtenues) avec 153 entrées</td>
+			</tr>
+			<tr>
+				<td class="update-date">22 juin 2025</td>
+				<td>Mario Kart World</td>
+				<td>Switch 2</td>
+				<td><i>Time Trial</i> : tous les staff ghosts battus</td>
+			</tr>
+			<tr>
+				<td class="update-date">15 juin 2025</td>
+				<td>Mario Kart World</td>
+				<td>Switch 2</td>
+				<td><i>GP</i> : toutes les coupes Miroir remportées avec 3 étoiles</td>
+			</tr>
+			<tr>
+				<td class="update-date">13 juin 2025</td>
+				<td>Mario Kart World</td>
+				<td>Switch 2</td>
+				<td><i>Survie</i> : toutes les coupes Miroir remportées avec 3 étoiles</td>
+			</tr>
+			<tr>
+				<td class="update-date">11 juin 2025</td>
+				<td>Mario Kart World</td>
+				<td>Switch 2</td>
+				<td><i>Survie</i> : toutes les coupes 150cc remportées avec 3 étoiles</td>
+			</tr>
+			<tr>
+				<td class="update-date">7 juin 2025</td>
+				<td>Mario Kart World</td>
+				<td>Switch 2</td>
+				<td><i>GP</i> : toutes les coupes 150cc remportées avec 3 étoiles</td>
+			</tr>
+			<tr>
+				<td class="update-date">5 juin 2025</td>
+				<td>Mario Kart World</td>
+				<td>Switch 2</td>
+				<td><i>GP</i> : toutes les coupes 150cc remportées</td>
+			</tr>
+			<tr>
+				<td class="update-date">31 mai 2025</td>
+				<td>Paper Mario</td>
+				<td>Nintendo 64</td>
+				<td>80/80 badges et 160/160 morceaux d'étoile (dont 64 quizz)</td>
+			</tr>
+			<tr>
+				<td class="update-date">30 mai 2025</td>
+				<td>Paper Mario</td>
+				<td>Nintendo 64</td>
+				<td>50/50 recettes Goû T</td>
+			</tr>
+			<tr>
+				<td class="update-date">27 mai 2025</td>
+				<td>Paper Mario</td>
+				<td>Nintendo 64</td>
+				<td>Toutes les upgrades (50/50 PC et PF, 30/30 PB)</td>
+			</tr>
+			<tr>
+				<td class="update-date">11 mai 2025</td>
+				<td>Paper Mario</td>
+				<td>Nintendo 64</td>
+				<td>Fini avec les 8/8 partenaires en rang ultra (soit 16/16 super blocs), avec 58/80 badges, 61/160 morceaux d'étoile (dont 11 quizz) et 8/50 recettes</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 avril 2025</td>
+				<td>Hollow Knight</td>
+				<td>Switch</td>
+				<td>Fini à 89% avec la première fin ("Hollow Knight")</td>
+			</tr>
+			<tr>
+				<td class="update-date">20 mars 2025</td>
+				<td>Outer Wilds</td>
+				<td>Switch</td>
+				<td>Journal de bord rempli soit tous lieux et toutes les entrées hors DLC (donc toutes sauf celles en bleu <a href=https://outerwilds.ventures/>sur cette checklist</a>)</td>
+			</tr>
+			<tr>
+				<td class="update-date">19 mars 2025</td>
+				<td>Outer Wilds</td>
+				<td>Switch</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">9 mars 2025</td>
+				<td>Lemmings</td>
+				<td>Megadrive</td>
+				<td>Série Sunsoft finie, soit 180/180 niveaux</td>
+			</tr>
+			<tr>
+				<td class="update-date">4 mars 2025</td>
+				<td>Lemmings</td>
+				<td>Megadrive</td>
+				<td>Série Present finie, soit 150/180 niveaux</td>
+			</tr>
+			<tr>
+				<td class="update-date">1er mars 2025</td>
+				<td>Lemmings</td>
+				<td>Megadrive</td>
+				<td>Série Mayhem finie, soit 120/180 niveaux</td>
+			</tr>
+			<tr>
+				<td class="update-date">25 février 2025</td>
+				<td>Lemmings</td>
+				<td>Megadrive</td>
+				<td>Série Taxing finie, soit 90/180 niveaux</td>
+			</tr>
+			<tr>
+				<td class="update-date">18 février 2025</td>
+				<td>Lemmings</td>
+				<td>Megadrive</td>
+				<td>Série Tricky finie, soit 60/180 niveaux</td>
+			</tr>
+			<tr>
+				<td class="update-date">16 février 2025</td>
+				<td>Lemmings</td>
+				<td>Megadrive</td>
+				<td>Série Fun finie, soit 30/180 niveaux</td>
+			</tr>
+			<tr>
+				<td class="update-date">17 janvier 2025</td>
+				<td>Portal</td>
+				<td>PC (Steam)</td>
+				<td><i>Bonus maps - Challenges</i> : tous défis (Least portals/Least steps/Least time) finis en or (18/18) --> tous les succès obtenus</td>
+			</tr>
+			<tr>
+				<td class="update-date">1er janvier 2025</td>
+				<td>Portal</td>
+				<td>PC (Steam)</td>
+				<td>Toutes caméras détruites dans la même partie (succès obtenu)</td>
+			</tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<div id="2020-2024" class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th class="date-col">Date</th>
+                <th class="game-col">Jeu</th>
+				<th class="console-col">Console</th>
+                <th class="details-col">Détails</th>
+            </tr>
+        </thead>
+        <tbody>         
+			<tr>
+				<td class="update-date">28 décembre 2024</td>
+				<td>Portal</td>
+				<td>PC (Steam)</td>
+				<td>Toutes radios trouvées et amenées pour la collecte du signal (succès obtenu)</td>
+			</tr>
+			<tr>
+				<td class="update-date">26 décembre 2024</td>
+				<td>Portal</td>
+				<td>PC (Steam)</td>
+				<td><i>Bonus maps - Advanced chambers</i> : toutes les salles (6/6) finies</td>
+			</tr>
+			<tr>
+				<td class="update-date">24 décembre 2024</td>
+				<td>Portal</td>
+				<td>PC (Steam)</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">20 octobre 2024</td>
+				<td>Celeste</td>
+				<td>Switch</td>
+				<td>Fraise dorée 6B (199ème fraise) <!-- 12 heures de grind, entre 167h et 179h de temps de jeu --></td>
+			</tr>
+
+			<tr>
+				<td class="update-date">8 août 2024</td>
+				<td>Celeste</td>
+				<td>PC (Steam)</td>
+				<td>Fini avec tous les succès (32/32)</td>
+			</tr>
+			<tr>
+				<td class="update-date">19 juillet 2024</td>
+				<td>Celeste</td>
+				<td>Switch</td>
+				<td>Fraise dorée 3B (198è fraise)</td>
+			</tr>
+			<tr>
+				<td class="update-date">15 juillet 2024</td>
+				<td>Celeste</td>
+				<td>Switch</td>
+				<td>Fraise dosée 7A (197ème fraise)</td>
+			</tr>
+			<tr>
+				<td class="update-date">29 juin 2024</td>
+				<td>Mario Kart 8 Deluxe</td>
+				<td>Switch</td>
+				<td><i>Time Trial</i> : tous les fantômes battus en 200cc<br><i>GP</i> : toutes les coupes 200cc remportées avec 3 étoiles</td>
+			</tr>
+			<tr>
+				<td class="update-date">14 juin 2024</td>
+				<td>Mario Kart 8 Deluxe</td>
+				<td>Switch</td>
+				<td><i>Time Trial</i> : tous les fantômes battus en 150cc</td>
+			</tr>
+			<tr>
+				<td class="update-date">11 juin 2024</td>
+				<td>Celeste</td>
+				<td>Switch</td>
+				<td>Fraise dorée 4B (196è fraise)</td>
+			</tr>
+			<tr>
+				<td class="update-date">2 juin 2024</td>
+				<td>Celeste</td>
+				<td>Switch</td>
+				<td>Fraise dorée 5B (195è fraise celeste)</td>
+			</tr>
+			<tr>
+				<td class="update-date">20 avril 2024</td>
+				<td>Super Mario Bros. Wonder</td>
+				<td>Switch</td>
+				<td>Fini avec tous niveaux/graines/pièces/drapeaux/badges/panneaux/médailles</td>
+			</tr>
+			<tr>
+				<td class="update-date">11 février 2024</td>
+				<td>Celeste</td>
+				<td>Switch</td>
+				<td>Fraise dorée 8A (194ème fraise) et trois autres fraises obtenues en janvier (3A, 6A et 1A dashless)</td>
+			</tr>
+			<tr>
+				<td class="update-date">21 novembre 2023</td>
+				<td>Hades</td>
+				<td>Switch</td>
+				<td>Tous les liens forgés avec tous les persos</td>
+			</tr>
+			<tr>
+				<td class="update-date">11 novembre 2023</td>
+				<td>Hades</td>
+				<td>Switch</td>
+				<td>Fini avec les trois fins (première évasion, générique de fin après 10 évasions, épilogue)<br>Toutes les prophéties (55/55) réalisées ; tous les liens avec les personnages forgés sauf Hypnos ; toutes les entrées du codex sauf 1 poisson ; tous les compagnons débloqués<br>Fini avec 16 heat de chaleur</td>
+			</tr>
+			<tr>
+				<td class="update-date">25 juillet 2023</td>
+				<td>Limbo</td>
+				<td>PC (Steam)</td>
+				<td>Tous les succès dont moins de 5 morts (obtenu avec 3 morts en 56 minutes RTA)</td>
+			</tr>
+			<tr>
+				<td class="update-date">23 juillet 2023</td>
+				<td>Limbo</td>
+				<td>PC (Steam)</td>
+				<td>Fini avec 5/13 succès</td>
+			</tr>
+			<tr>
+				<td class="update-date">30 juin 2023</td>
+				<td>Street Fighter II :<br>Special Champion Edition</td>
+				<td>Megadrive</td>
+				<td>Fini avec Ryu (réglages par défaut : hyper 3 étoiles, difficulty 5 étoiles)</td>
+			</tr>
+			<tr>
+				<td class="update-date">8 avril 2023</td>
+				<td>Pokemon Puzzle League</td>
+				<td>Nintendo 64 (NSO)</td>
+				<td><i>Puzzle University</i> : Tous puzzles de classe A finis</td>
+			</tr>
+			<tr>
+				<td class="update-date">3 avril 2023</td>
+				<td>Metroid Prime Remastered</td>
+				<td>Switch</td>
+				<td>Fini en normal</td>
+			</tr>
+			<tr>
+				<td class="update-date">12 mars 2023</td>
+				<td>It Takes Two</td>
+				<td>Switch</td>
+				<td>Fini avec 12/25 mini-jeux trouvés</td>
+			</tr>
+			<tr>
+				<td class="update-date">4 mars 2023</td>
+				<td>AoE II Definitive Edition</td>
+				<td>PC (Steam)</td>
+				<td>Tous les succès (201/201)</td>
+			</tr>
+			<tr>
+				<td class="update-date">2 mars 2023</td>
+				<td>AoE II Definitive Edition</td>
+				<td>PC (Steam)</td>
+				<td>Campagnes : DLC 3 fini en hard --> toutes les campagnes/batailles historiques finies en hard (209/209 avec les 3 DLC)<br>Tous les succès sauf 1 vs 3 joueurs (200/201)</td>
+			</tr>
+			<tr>
+				<td class="update-date">12 décembre 2022</td>
+				<td>Uncharted 3</td>
+				<td>Playstation 3</td>
+				<td>Fini en extreme avec 100/100 trésors et la relique sacrée</td>
+			</tr>
+			<tr>
+				<td class="update-date">30 novembre 2022</td>
+				<td>Uncharted 3</td>
+				<td>Playstation 3</td>
+				<td>Fini en normal</td>
+			</tr>
+			<tr>
+				<td class="update-date">13 novembre 2022</td>
+				<td>Pokemon Puzzle League</td>
+				<td>Nintendo 64 (NSO)</td>
+				<td><i>1P Stadium</i> : Fini en Very Hard</td>
+			</tr>
+			<tr>
+				<td class="update-date">1er octobre 2022</td>
+				<td>Pokemon Puzzle League</td>
+				<td>Nintendo 64 (NSO)</td>
+				<td><i>1P Stadium</i> : Fini en Hard</td>
+			</tr>
+			<tr>
+				<td class="update-date">21 septembre 2022</td>
+				<td>Dr. Mario 64</td>
+				<td>Nintendo 64 (NSO)</td>
+				<td><i>Story</i> : Fini en Hard avec Wario</td>
+			</tr>
+			<tr>
+				<td class="update-date">19 septembre 2022</td>
+				<td>Dr. Mario 64</td>
+				<td>Nintendo 64 (NSO)</td>
+				<td><i>Story</i> : Fini en Hard avec Mario</td>
+			</tr>
+			<tr>
+				<td class="update-date">13 août 2022</td>
+				<td>Mario Kart 8 Deluxe</td>
+				<td>Switch</td>
+				<td>DLC Vagues 1 et 2 : tout fini (GP en 3 étoiles dans tous les modes + Staff ghosts battus en 150cc et 200cc)</td>
+			</tr>
+			<tr>
+				<td class="update-date">3 août 2022</td>
+				<td>DKC Tropical Freeze</td>
+				<td>Switch</td>
+				<td>Fini à 200% (ie toutes pièces puzzle, toutes lettres kong rouge, et en difficile)
+					+ toutes lettres kong bleues + toutes figurines (tous les autres extras sont déjà débloqués avec les 200%)</td>
+			</tr>
+			<tr>
+				<td class="update-date">27 juillet 2022</td>
+				<td>DKC Tropical Freeze</td>
+				<td>Switch</td>
+				<td>Fini à 100%, avec toutes figurines, tous dioramas et toutes musiques</td>
+			</tr>
+			<tr>
+				<td class="update-date">12 juillet 2022</td>
+				<td>DKC Tropical Freeze</td>
+				<td>Switch</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 juillet 2022</td>
+				<td>Super Mario Galaxy<br>(Super Mario 3D All-Stars)</td>
+				<td>Switch</td>
+				<td>Fini avec 121 étoiles avec mario et avec luigi</td>
+			</tr>
+			<tr>
+				<td class="update-date">7 juillet 2022</td>
+				<td>Super Mario Galaxy<br>(Super Mario 3D All-Stars)</td>
+				<td>Switch</td>
+				<td>Fini avec 120 étoiles</td>
+			</tr>
+			<tr>
+				<td class="update-date">15 juin 2022</td>
+				<td>Super Mario Galaxy<br>(Super Mario 3D All-Stars)</td>
+				<td>Switch</td>
+				<td>Fini avec 80 étoiles</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 juin 2022</td>
+				<td>Inside</td>
+				<td>Switch</td>
+				<td>Fini (fin normale et fin secrète)</td>
+			</tr>
+			<tr>
+				<td class="update-date">6 juin 2022</td>
+				<td>Streets of Rage 4</td>
+				<td>Switch</td>
+				<td><i>Arcade</i> : fini en Mania+ avec rang A,<br><i>Story</i> : tous les rangs S en Mania+</td>
+			</tr>
+			<tr>
+				<td class="update-date">2 juin 2022</td>
+				<td>Streets of Rage 4</td>
+				<td>Switch</td>
+				<td><i>Story</i> : Fini en Mania+</td>
+			</tr>
+			<tr>
+				<td class="update-date">2 mars 2022</td>
+				<td>Celeste</td>
+				<td>Switch</td>
+				<td>Chapitre 9 (DLC) fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">5 décembre 2021</td>
+				<td>AoE II Definitive Edition</td>
+				<td>PC (Steam)</td>
+				<td><i>Campagnes/Batailles historiques</i> : 177/177 campagnes/batailles historiques finies en hard ou avec médaille d'or</td>
+			</tr>
+			<tr>
+				<td class="update-date">4 décembre 2021</td>
+				<td>Celeste</td>
+				<td>Switch</td>
+				<td>Fini avec toutes les faces A, B et C pour les 8 chapitres hors DLC + 175/175 fraises rouges + 7 fraises dorées</td>
+			</tr>
+			<tr>
+				<td class="update-date">1er décembre 2021</td>
+				<td>AoE II Definitive Edition</td>
+				<td>PC (Steam)</td>
+				<td>PC battu en Extreme sur carte aléatoire Arena</td>
+			</tr>
+			<tr>
+				<td class="update-date">4 octobre 2021</td>
+				<td>Cookie Clicker</td>
+				<td>PC</td>
+				<td>16è et dernier Shadow Achievement visé</td>
+			</tr>
+			<tr>
+				<td class="update-date">4 octobre 2021</td>
+				<td>Celeste</td>
+				<td>Switch</td>
+				<td>Fini avec 145/175 fraises</td>
+			</tr>
+			<tr>
+				<td class="update-date">6 juin 2021</td>
+				<td>Super Mario Sunshine<br>(Super Mario 3D All-Stars)</td>
+				<td>Switch</td>
+				<td>Fini avec 120 soleils</td>
+			</tr>
+			<tr>
+				<td class="update-date">22 mai 2021</td>
+				<td>Zelda II</td>
+				<td>NES (NSO)</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">5 décembre 2020</td>
+				<td>Tetris 99</td>
+				<td>Switch</td>
+				<td><i>Mode Tetris 99</i> : 9 victoires consécutives</td>
+			</tr>
+			<tr>
+				<td class="update-date">7 novembre 2020</td>
+				<td>Super Mario Bros. 35</td>
+				<td>Switch</td>
+				<td>Tous niveaux débloqués et finis</td>
+			</tr>
+			<tr>
+				<td class="update-date">23 octobre 2020</td>
+				<td>Streets of Rage 4</td>
+				<td>Switch</td>
+				<td><i>Story</i> : Tous rangs S en difficile</td>
+			</tr>
+			<tr>
+				<td class="update-date">19 octobre 2020</td>
+				<td>Streets of Rage 4</td>
+				<td>Switch</td>
+				<td><i>Story</i> : Fini en Mania</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 octobre 2020</td>
+				<td>Super Mario Bros. 35</td>
+				<td>Switch</td>
+				<td><i>Bataille à 35</i> : Top 1, avec 3446 points</td>
+			</tr>
+			<tr>
+				<td class="update-date">22 septembre 2020</td>
+				<td>Super Mario 64<br>(Super Mario 3D All-Stars)</td>
+				<td>Switch</td>
+				<td>Fini avec 120 étoiles</td>
+			</tr>
+			<tr>
+				<td class="update-date">6 août 2020</td>
+				<td>Spot Goes to Hollywood</td>
+				<td>Megadrive</td>
+				<td>Fini en Hard</td>
+			</tr>
+			<tr>
+				<td class="update-date">17 juin 2020</td>
+				<td>AoE II Definitive Edition</td>
+				<td>PC (Steam)</td>
+				<td><i>Campagnes/Batailles historiques</i> : toutes finies dont 160/161 finies en difficile ou avec médaille d'or (manque Art of War : Booming)</td>
+			</tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<div id="2015-2019" class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th class="date-col">Date</th>
+                <th class="game-col">Jeu</th>
+				<th class="console-col">Console</th>
+                <th class="details-col">Détails</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+				<td class="update-date">30 septembre 2019</td>
+				<td>Zelda Link's Awakening</td>
+				<td>Switch</td>
+				<td>Fini en normal avec 0 morts</td>
+			</tr>
+			<tr>
+				<td class="update-date">15 août 2019</td>
+				<td>Super Mario Maker 2</td>
+				<td>Switch</td>
+				<td><i>Story</i> : fini avec tous les stages finis</td>
+			</tr>
+			<tr>
+				<td class="update-date">13 juin 2019</td>
+				<td>Super Hang-On</td>
+				<td>Megadrive</td>
+				<td><i>Original Mode</i> : Fini avec toutes les pièces avant victoire finale</td>
+			</tr>
+			<tr>
+				<td class="update-date">15 mai 2019</td>
+				<td>Joe Dever's Lone Wolf</td>
+				<td>Switch</td>
+				<td>Fini en hard</td>
+			</tr>
+			<tr>
+				<td class="update-date">1er mai 2019</td>
+				<td>Joe Dever's Lone Wolf</td>
+				<td>Switch</td>
+				<td>Fini en normal</td>
+			</tr>
+			<tr>
+				<td class="update-date">19 novembre 2018</td>
+				<td>Zelda Breath of the Wild</td>
+				<td>Switch</td>
+				<td>Fini en Expert avec map finie à 100% (donjons, korogus, lieux, sanctuaires) mais aussi toutes les missions et quêtes secondaires (dont les épreuves de l'épée) finies<br>Tous les souvenirs, tous les vêtements upgradés au max, encyclopédie complète et tous les objets spéciaux trouvés (dont les filets/selles et médailles de Kilton).</td>
+			</tr>
+			<tr>
+				<td class="update-date">9 octobre 2018</td>
+				<td>Mario Kart 8 Deluxe</td>
+				<td>Switch</td>
+				<td><i>Time Trial</i> : Tous les Staff Ghosts battus en 150cc et 200cc</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 mai 2018</td>
+				<td>ToeJam & Earl in<br>Panic on Funkotron</td>
+				<td>Megadrive</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">25 avril 2018</td>
+				<td>Zelda Breath of the Wild</td>
+				<td>Switch</td>
+				<td>Tous les sanctuaires finis (120/120)</td>
+			</tr>
+			<tr>
+				<td class="update-date">24 avril 2018</td>
+				<td>Zelda Breath of the Wild</td>
+				<td>Switch</td>
+				<td>DLC2 fini et 118è sanctuaire fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">30 novembre 2017 (date à confirmer)</td>
+				<td>Super Mario Odyssey</td>
+				<td>Switch</td>
+				<td>Fini avec toutes les lunes/multilunes (836/836) et compteur de lunes bloqué à 999 (max)</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 novembre 2017</td>
+				<td>Super Mario Odyssey</td>
+				<td>Switch</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">9 juillet 2017</td>
+				<td>Zelda Breath of the Wild</td>
+				<td>Switch</td>
+				<td>Épreuve Épée Extreme finie</td>
+			</tr>
+			<tr>
+				<td class="update-date">7 juillet 2017</td>
+				<td>Zelda Breath of the Wild</td>
+				<td>Switch</td>
+				<td>117/120 sanctuaires</td>
+			</tr>
+			<tr>
+				<td class="update-date">5 juin 2017</td>
+				<td>Zelda Breath of the Wild</td>
+				<td>Switch</td>
+				<td>Fini avec 111/120 sanctuaires et 205/900 Korogus, encyclopédie terminée</td>
+			</tr>
+			<tr>
+				<td class="update-date">31 mai 2017</td>
+				<td>Zelda Breath of the Wild</td>
+				<td>Switch</td>
+				<td>Toutes les créatures divines (4/4) battues</td>
+			</tr>
+			<tr>
+				<td class="update-date">19 mai 2017</td>
+				<td>Zelda Breath of the Wild</td>
+				<!-- Début du jeu le 26 avril 2017 -->
+				<td>Switch</td>
+				<td>3/4 créatures divines battues, 12/12 souvenirs trouvés, 86/120 sanctuaires, 98/900 Korogus</td>
+			</tr>
+			<tr>
+				<td class="update-date">2 avril 2017</td>
+				<td>Dr. Mario</td>
+				<td>NES (NSO)</td>
+				<td>Niveau 21 fini en speed High</td>
+			</tr>
+			<tr>
+				<td class="update-date">31 mars 2017</td>
+				<td>Dr. Mario</td>
+				<td>NES (NSO)</td>
+				<td>Niveau 23 fini en speed Medium</td>
+			</tr>
+			<tr>
+				<td class="update-date">19 juin 2016</td>
+				<td>Metal Gear Solid 5</td>
+				<td>Playstation 3</td>
+				<td>Toutes les missions finies avec rang S et tous les noms de codes ; toutes opérations secondaires et toutes les missions spéciales des missions de terrain finies<br>Toutes les plateformes construites pour la mother base, tous les plans, objets clés et photos souvenirs trouvés</td>
+			</tr>
+			<tr>
+				<td class="update-date">18 avril 2016</td>
+				<td>Metal Gear Solid 5</td>
+				<td>Playstation 3</td>
+				<td>Toutes tâches de toutes les missions finies et toutes espèces d'animaux sauvages extraites</td>
+			</tr>
+			<tr>
+				<td class="update-date">24 décembre 2015</td>
+				<td>Metal Gear Solid 5</td>
+				<td>Playstation 3</td>
+				<td>Toutes les missions finies</td>
+			</tr>
+			<tr>
+				<td class="update-date">20 décembre 2015</td>
+				<td>Metal Gear Solid 5</td>
+				<td>Playstation 3</td>
+				<td>Fini</td>
+			</tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div id="2010-2014" class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th class="date-col">Date</th>
+                <th class="game-col">Jeu</th>
+				<th class="console-col">Console</th>
+                <th class="details-col">Détails</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+			<tr>
+				<td class="update-date">19 mars 2011</td>
+				<td>Gran Turismo 5</td>
+				<td>Playstation 3</td>
+				<td>Niveau 37 en A-Spec : séries Débutant/Amateur/Professionnel/Expert/Extreme finies avec tout en or, série Endurance : 5/9 épreuves finies (en or)<br>216 voitures premium et 785 voitures standard (mais quelques doublons)</td>
+			</tr>
+			<tr>
+				<td class="update-date">21 janvier 2011</td>
+				<td>Gran Turismo 5</td>
+				<td>Playstation 3</td>
+				<td>Niveau 40 en B-Spec</td>
+			</tr>
+			<tr>
+				<td class="update-date">3 janvier 2011</td>
+				<td>The Beatles : Rock Band</td>
+				<td>Playstation 3</td>
+				<td>Fini en Expert avec tout en 5 étoiles</td>
+			</tr>
+			<tr>
+				<td class="update-date">18 décembre 2010</td>
+				<td>Gran Turismo 5</td>
+				<td>Playstation 3</td>
+				<td>Trophée "Grand final" obtenu (version longue de la vidéo de fin)</td>
+			</tr>
+			<tr>
+				<td class="update-date">29 novembre 2010</td>
+				<td>Gran Turismo 5</td>
+				<td>Playstation 3</td>
+				<td>Tous les permis en or (60/60), trophée "Final" obtenu (atteindre la vidéo de fin)</td>
+			</tr>
+			<tr>
+				<td class="update-date">24 octobre 2010</td>
+				<td>GH Warriors of Rock</td>
+				<td>Playstation 3</td>
+				<td><i>Quête </i> : Finie (fléau du rock battu et demi-dieu du rock libéré)</td>
+			</tr>
+			<tr>
+				<td class="update-date">28 septembre 2010</td>
+				<td>GH Warriors of Rock</td>
+				<td>Playstation 3</td>
+				<td><i>Quête</i> : guitare légendaire récupérée</td>
+			</tr>
+			<tr>
+				<td class="update-date">7 septembre 2010</td>
+				<td>Tetris DS</td>
+				<td>Nintendo DS</td>
+				<td><i>Standard - VS CPU</i> : niveaux 1 à 5 finis</td>
+			</tr>
+			<tr>
+				<td class="update-date">28 août 2010</td>
+				<td>God of War III</td>
+				<td>Playstation 3</td>
+				<td>Fini en difficile (mode Titan), avec tous les biens divins et les armes améliorées au max</td>
+			</tr>
+			<tr>
+				<td class="update-date">24 juillet 2010</td>
+				<td>God of War III</td>
+				<td>Playstation 3</td>
+				<td><i>Trésors - Défis</i> : Défi de l'Olympe terminé</td>
+			</tr>
+			<tr>
+				<td class="update-date">20 juillet 2010</td>
+				<td>God of War III</td>
+				<td>Playstation 3</td>
+				<td>Fini en normal avec tous yeux Gorgone, plumes Phoenix et cornes Minotaure</td>
+			</tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div id="2005-2009" class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th class="date-col">Date</th>
+                <th class="game-col">Jeu</th>
+				<th class="console-col">Console</th>
+                <th class="details-col">Détails</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+				<td class="update-date">23 novembre 2009</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Expert : 24/25 morceaux bonus finis (tous sauf TTFaF)</td>
+			</tr>
+			<tr>
+				<td class="update-date">22 novembre 2009</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : The Devil Went Down To Georgia (DLC gratuit) fini en hard</td>
+			</tr>
+			<tr>
+				<td class="update-date">21 novembre 2009</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Expert : 39/39 morceaux et 23/25 morceaux bonus finis, 2/3 boss battus (manque boss final)</td>
+			</tr>
+			<tr>
+				<td class="update-date">29 octobre 2009</td>
+				<td>Guitar Hero 5</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : 810 étoiles en Expert</td>
+			</tr>
+			<tr>
+				<td class="update-date">18 octobre 2009</td>
+				<td>Uncharted 2</td>
+				<td>Playstation 3</td>
+				<td>Fini en extreme avec tous les trophées (100 trésors et relique étrange)</td>
+			</tr>
+			<tr>
+				<td class="update-date">16 octobre 2009</td>
+				<td>Uncharted 2</td>
+				<td>Playstation 3</td>
+				<td>Fini en difficile</td>
+			</tr>
+			<tr>
+				<td class="update-date">1er octobre 2009</td>
+				<td>Guitar Hero 5</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Finie en Expert (2 essais max par chanson sauf Children of Bodom 3 essais) avec 85/85 morceaux finis et 505 étoiles</td>
+			</tr>
+			<tr>
+				<td class="update-date">9 août 2009</td>
+				<td>Rock Band</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Expert : 43/67 morceaux finis en 5 étoiles et 24/67 morceaux finis en 4 étoiles</td>
+			</tr>
+			<tr>
+				<td class="update-date">18 juillet 2009</td>
+				<td>Chrono Trigger</td>
+				<td>Nintendo DS</td>
+				<td>Fini avec la fin principale</td>
+			</tr>
+			<tr>
+				<td class="update-date">12 juillet 2009</td>
+				<td>Rock Band</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Finie en Expert en 2 jours, 66/67 morceaux passés au premier essai (tous sauf Green Grass and High Tides)</td>
+			</tr>
+			<tr>
+				<td class="update-date">22 mai 2009</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Expert : 38/39 morceaux finis</td>
+			</tr>
+			<tr>
+				<td class="update-date">9 mai 2009</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Expert : 37/39 morceaux finis</td>
+			</tr>
+			<tr>
+				<td class="update-date">28 avril 2009</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Difficile : Boss final battu et 64/64 morceaux finis</td>
+			</tr>
+			<tr>
+				<td class="update-date">23 février 2009</td>
+				<td>Metal Gear Acid</td>
+				<td>Playstation Portable</td>
+				<td>Fini en normal</td>
+				<!-- Partie recommencée depuis le début, précédente arrêtée au boss final, XXX/204 cartes -->
+			</tr>
+			<tr>
+				<td class="update-date">1er février 2009</td>
+				<td>Virtua Tennis 3</td>
+				<td>Playstation 3</td>
+				<td><i>World Tour - École de tennis</i> : Finie en confirmé</td>
+			</tr>
+			<tr>
+				<td class="update-date">31 janvier 2009</td>
+				<td>Virtua Tennis 3</td>
+				<td>Playstation 3</td>
+				<td><i>World Tour</i> : Toutes stats à fond</td>
+			</tr>
+			<tr>
+				<td class="update-date">27 janvier 2009</td>
+				<td>Virtua Tennis 3</td>
+				<td>Playstation 3</td>
+				<td><i>World Tour</i> : Numéro 1 mondial</td>
+			</tr>
+			<tr>
+				<td class="update-date">2 janvier 2009</td>
+				<td>Mega Man 9</td>
+				<td>Playstation 3 (PSN)</td>
+				<td>Fini en normal avec 48% des défis accomplis</td>
+			</tr>
+			<tr>
+				<td class="update-date">14 décembre 2008</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Moyen : 63/64 morceaux finis en 5 étoiles<br>
+				Difficile : 62/64 morceaux finis dont 25/64 en 5 étoiles<br>
+				Expert : 47/64 morceaux finis dont 10/64 en 5 étoiles</td>
+			</tr>
+			<tr>
+				<td class="update-date">27 novembre 2008</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Moyen : 62/64 morceaux finis en 5 étoiles<br>
+				Difficile : 61/64 morceaux finis<br>
+				Expert : 40/64 morceaux finis</td>
+			</tr>
+			<tr>
+				<td class="update-date">4 novembre 2008</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Difficile : 55/64 morceaux finis</td>
+			</tr>
+			<tr>
+				<td class="update-date">3 novembre 2008</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Expert : 29/64 morceaux finis</td>
+			</tr>
+			<tr>
+				<td class="update-date">1er novembre 2008</td>
+				<td>Uncharted</td>
+				<td>Playstation 3</td>
+				<td>Fini en extreme, 1000/1000 points, 61/60 trésors</td>
+			</tr>
+			<tr>
+				<td class="update-date">28 octobre 2008</td>
+				<td>Uncharted</td>
+				<td>Playstation 3</td>
+				<td>Fini en difficile, 630/1000 points</td>
+			</tr>
+			<tr>
+				<td class="update-date">25 octobre 2008</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Difficile : 50/64 morceaux finis<br>
+				Expert : 19/64 morceaux finis<br></td>
+			</tr>
+			<tr>
+				<td class="update-date">16 octobre 2008</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Expert : 15/64 morceaux finis</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 octobre 2008</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Moyen : 55/64 morceaux finis en 5 étoiles</td>
+			</tr>
+			<tr>
+				<td class="update-date">5 octobre 2008</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Difficile : 47/64 morceaux finis</td>
+			</tr>
+			<tr>
+				<td class="update-date">4 octobre 2008</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Facile : 64/64 morceaux finis en 5 étoiles</td>
+			</tr>
+			<tr>
+				<td class="update-date">3 octobre 2008</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Facile : 38/39 morceaux finis en 5 étoiles et 1/39 en 4 étoiles, 22/25 morceaux bonus finis en 5 étoiles et 3/25 en 4 étoiles<br>
+				Moyen : 34/39 morceaux finis en 5 étoiles et 5/39 en 3 ou 4 étoiles, 3/25 morceaux bonus finis en 5 étoiles et 22/25 en 3 ou 4 étoiles<br>
+				Difficile : 31/39 morceaux finis en 3 ou 4 étoiles, 3/25 morceaux bonus finis en 3 ou 4 étoiles<br>
+				Expert : 3/39 morceaux finis en 3 ou 4 étoiles, 1/25 morceau bonus fini en 3 ou 4 étoiles<br>
+				</td>
+			</tr>
+			<tr>
+				<td class="update-date">27 septembre 2008</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Difficile : 31/39 morceaux et 3/25 morceaux bonus finis<br>
+				Expert : 3/39 morceaux finis</td>
+			</tr>
+			<tr>
+				<td class="update-date">26 août 2008</td>
+				<td>Metal Gear Solid 4</td>
+				<td>Playstation 3</td>
+				<td>Fini en Extreme avec rang Big Boss en 1h41m50s (WR)</td>
+			</tr>
+			<tr>
+				<td class="update-date">19 août 2008</td>
+				<td>Metal Gear Solid 4</td>
+				<td>Playstation 3</td>
+				<td>Fini en Liquid Easy, 38/40 emblèmes</td>
+			</tr>
+			<tr>
+				<td class="update-date">3 août 2008</td>
+				<td>Metal Gear Solid 4</td>
+				<td>Playstation 3</td>
+				<td>Fini en Extreme avec rang Big Boss en 1h59m11s</td>
+			</tr>
+			<tr>
+				<td class="update-date">26 juillet 2008</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Facile : 64/64 morceaux finis<br>
+				Moyen : Boss final battu, 39/39 morceaux et 25/25 morceaux bonus finis</td>
+			</tr>
+			<tr>
+				<td class="update-date">18 juillet 2008</td>
+				<td>Guitar Hero 3</td>
+				<td>Playstation 3</td>
+				<td><i>Carrière</i> : Facile : Boss final battu</td>
+			</tr>
+			<tr>
+				<td class="update-date">14 juillet 2008</td>
+				<td>Metal Gear Solid 4</td>
+				<td>Playstation 3</td>
+				<td>Fini en Liquid Easy, 37/40 emblèmes</td>
+			</tr>
+			<tr>
+				<td class="update-date">8 juillet 2008</td>
+				<td>Metal Gear Solid 4</td>
+				<td>Playstation 3</td>
+				<td>Fini en Liquid Easy, 36/40 emblèmes</td>
+			</tr>
+			<tr>
+				<td class="update-date">7 juillet 2008</td>
+				<td>Metal Gear Solid 4</td>
+				<td>Playstation 3</td>
+				<td>Fini en Extreme avec rang Big Boss en 2h43m32s, 34/40 emblèmes</td>
+			</tr>
+			<tr>
+				<td class="update-date">4 juillet 2008</td>
+				<td>Metal Gear Solid 4</td>
+				<td>Playstation 3</td>
+				<td>Fini en Liquid Easy, 26/40 emblèmes</td>
+			</tr>
+			<tr>
+				<td class="update-date">2 juillet 2008</td>
+				<td>Metal Gear Solid 4</td>
+				<td>Playstation 3</td>
+				<td>Fini en Naked Normal, 22/40 emblèmes au total</td>
+			</tr>
+			<tr>
+				<td class="update-date">20 juin 2008</td>
+				<td>Metal Gear Solid 4</td>
+				<td>Playstation 3</td>
+				<td>Fini en Solid Normal</td>
+			</tr>
+			<tr>
+				<td class="update-date">16 juin 2008</td>
+				<td>Metal Gear Solid 4</td>
+				<td>Playstation 3</td>
+				<td>Fini en Extreme</td>
+			</tr>
+			<tr>
+				<td class="update-date">14 juin 2008</td>
+				<td>Metal Gear Solid 4</td>
+				<td>Playstation 3</td>
+				<td>Fini en difficile</td>
+			</tr>
+			<tr>
+				<td class="update-date">1 mai 2008</td>
+				<td>Ikaruga</td>
+				<td>Gamecube</td>
+				<td>Fini en Easy en utilisant 2 continues, avec 5 vies par continu</td>
+			</tr>
+			<tr>
+				<td class="update-date">15 mars 2008</td>
+				<td>MGS Portable Ops</td>
+				<td>Playstation Portable</td>
+				<td>Fini en Extreme</td>
+			</tr>
+			<tr>
+				<td class="update-date">11 mars 2008</td>
+				<td>MGS Portable Ops</td>
+				<td>Playstation Portable</td>
+				<td>Fini en Normal</td>
+			</tr>
+			<tr>
+				<td class="update-date">20 janvier 2008</td>
+				<td>Zelda Phantom Hourglass</td>
+				<td>Nintendo DS</td>
+				<td>Mini-jeux/Boutiques : 999 coups à l'entraînement à l'épée, 200 points chez Terry</td>
+			</tr>
+			<tr>
+				<td class="update-date">31 décembre 2007</td>
+				<td>Zelda Phantom Hourglass</td>
+				<td>Nintendo DS</td>
+				<td>Tous les cœurs obtenus (16/16)</td>
+			</tr>
+			<tr>
+				<td class="update-date">29 décembre 2007</td>
+				<td>Zelda Phantom Hourglass</td>
+				<td>Nintendo DS</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">9 décembre 2007</td>
+				<td>Shadow of the Colossus</td>
+				<td>Playstation 2</td>
+				<td>Fini en difficile</td>
+			</tr>
+			<tr>
+				<td class="update-date">3 décembre 2007</td>
+				<td>Shadow of the Colossus</td>
+				<td>Playstation 2</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">14 novembre 2007</td>
+				<td>Yoshi's Island</td>
+				<td>Super Nintendo</td>
+				<td>Fini avec tous les niveaux à 100 points</td>
+			</tr>
+			<tr>
+				<td class="update-date">26 août 2007</td>
+				<td>Gran Turismo 4</td>
+				<td>Playstation 2</td>
+				<td><i>Mode Gran Turismo - Centre de permis</i> : 80/80 médailles d'or remportées <!--(B1 à S16) --> + 5/5 pauses café en or</td>
+			</tr>
+			<tr>
+				<td class="update-date">25 août 2007</td>
+				<td>Gran Turismo 4</td>
+				<td>Playstation 2</td>
+				<td><i>Mode Gran Turismo - Centre de permis</i> : 79/80 médailles d'or remportées <!--(B1 à S15) --> + 5/5 pauses café en or</td>
+			</tr>
+			<tr>
+				<td class="update-date">24 août 2007</td>
+				<td>Gran Turismo 4</td>
+				<td>Playstation 2</td>
+				<td><i>Mode Gran Turismo - Centre de permis</i> : 69/80 médailles d'or remportées <!--(B1 à S5) --> + 4/5 pauses café en or</td>
+			</tr>
+			<tr>
+				<td class="update-date">23 août 2007</td>
+				<td>Gran Turismo 4</td>
+				<td>Playstation 2</td>
+				<td><i>Mode Gran Turismo - Centre de permis</i> : 64/80 médailles d'or remportées <!--(B1 à IA16) --> + 4/5 pauses café en or</td>
+			</tr>
+			<tr>
+				<td class="update-date">22 août 2007</td>
+				<td>Gran Turismo 4</td>
+				<td>Playstation 2</td>
+				<td><i>Mode Gran Turismo - Centre de permis</i> : 56/80 médailles d'or remportées <!--(B1 à IA8) --> + 4/5 pauses café en or</td>
+			</tr>
+			<tr>
+				<td class="update-date">21 août 2007</td>
+				<td>Gran Turismo 4</td>
+				<td>Playstation 2</td>
+				<td><i>Mode Gran Turismo - Centre de permis</i> : 36/80 médailles d'or remportées <!--(B1 à IB4) --> + 2/5 pauses café en or</td>
+			</tr>
+						<tr>
+				<td class="update-date">20 août 2007</td>
+				<td>Gran Turismo 4</td>
+				<td>Playstation 2</td>
+				<td><i>Mode Gran Turismo - Centre de permis</i> : 16/80 médailles d'or remportées <!--(B1 à B16) --> + 1/5 pauses café en or</td>
+			</tr>
+			<tr>
+				<td class="update-date">16 août 2007</td>
+				<td>Perfect Dark</td>
+				<td>Nintendo 64</td>
+				<td><i>Solo</i> : MBR A 1:28 et MBR PA 1:37 (JAP)</td>
+			</tr>
+			<tr>
+				<td class="update-date">15 août 2007</td>
+				<td>Perfect Dark</td>
+				<td>Nintendo 64</td>
+				<td><i>Solo</i> : MBR A-SA 1:33 (JAP)</td>
+			</tr>
+			<tr>
+				<td class="update-date">7 août 2007</td>
+				<td>Okami</td>
+				<td>Playstation 2</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">30 juillet 2007</td>
+				<td>Tetris</td>
+				<td>Game Boy</td>
+				<td><i>B-type</i> : Niveaux 16-5 et 17-5 finis</td>
+			</tr>
+			<tr>
+				<td class="update-date">29 juillet 2007</td>
+				<td>Tetris</td>
+				<td>Game Boy</td>
+				<td><i>B-type</i> : Niveau 19-4 fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">21 juillet 2007</td>
+				<td>Mega Man IV</td>
+				<td>Game Boy</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">13 juillet 2007</td>
+				<td>MGS2 Substance</td>
+				<td>Playstation 2</td>
+				<td><i>Battle Boss</i> : Fini en normal avec Raiden</td>
+			</tr>
+			<tr>
+				<td class="update-date">12 juillet 2007</td>
+				<td>MGS2 Substance</td>
+				<td>Playstation 2</td>
+				<td><i>Battle Boss</i> : Fini en easy avec Raiden</td>
+			</tr>
+			<tr>
+				<td class="update-date">8 juillet 2007</td>
+				<td>MGS2 Substance</td>
+				<td>Playstation 2</td>
+				<td><i>Skateboarding</i> : Fini avec Raiden rang A</td>
+			</tr>
+			<tr>
+				<td class="update-date">4 juillet 2007</td>
+				<td>MGS2 Substance</td>
+				<td>Playstation 2</td>
+				<td><i>Missions</i> : 511/511 highscores</td>
+			</tr>
+			<tr>
+				<td class="update-date">3 juillet 2007</td>
+				<td>Tetris</td>
+				<td>Game Boy</td>
+				<td><i>B-type</i> : Niveau 15-5 fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">29 juin 2007</td>
+				<td>Tetris</td>
+				<td>Game Boy</td>
+				<td><i>B-type</i> : Niveaux 14-5 et 17-4 finis</td>
+			</tr>
+			<tr>
+				<td class="update-date">12 juin 2007</td>
+				<td>Mario vs. Donkey Kong 2</td>
+				<td>Nintendo DS</td>
+				<td>80/80 médailles d'or</td>
+			</tr>
+			<tr>
+				<td class="update-date">11 juin 2007</td>
+				<td>Mario vs. Donkey Kong 2</td>
+				<td>Nintendo DS</td>
+				<td>64 médailles d'or et 16 d'argent</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 juin 2007</td>
+				<td>Mario vs. Donkey Kong 2</td>
+				<td>Nintendo DS</td>
+				<td>36 médailles d'or et 44 d'argent</td>
+			</tr>
+			<tr>
+				<td class="update-date">4 juin 2007</td>
+				<td>Mario vs. Donkey Kong 2</td>
+				<td>Nintendo DS</td>
+				<td>Fini avec 19 médailles d'or et 61 d'argent</td>
+			</tr>
+			<tr>
+				<td class="update-date">8 mai 2007</td>
+				<td>God of War II</td>
+				<td>Playstation 2</td>
+				<td>Partie bonus Titan finie avec 999 999 orbes rouges</td>
+			</tr>
+			<tr>
+				<td class="update-date">7 mai 2007</td>
+				<td>God of War II</td>
+				<td>Playstation 2</td>
+				<td>6/6 urnes de pouvoir</td>
+			</tr>
+			<tr>
+				<td class="update-date">6 mai 2007</td>
+				<td>God of War II</td>
+				<td>Playstation 2</td>
+				<td>5/6 urnes de pouvoir et  7/7 costumes<br><i>Trésors - Défi des titans </i> : Fini avec rang Titan (5 rangs Titan, 2 dieu)</td>
+			</tr>
+			<tr>
+				<td class="update-date">5 mai 2007</td>
+				<td>God of War II</td>
+				<td>Playstation 2</td>
+				<td>Fini en Titan</td>
+			</tr>
+			<tr>
+				<td class="update-date">27 avril 2007</td>
+				<td>God of War II</td>
+				<td>Playstation 2</td>
+				<td>Fini en Normal</td>
+			</tr>
+			<tr>
+				<td class="update-date">21 avril 2007</td>
+				<td>Virtua Tennis 2</td>
+				<td>Playstation 2</td>
+				<td><i>World Tour</i> : Fini, perso masculin avec stats à fond</td>
+			</tr>
+			<tr>
+				<td class="update-date">20 avril 2007</td>
+				<td>Virtua Tennis 2</td>
+				<td>Playstation 2</td>
+				<td><i>Tournament</i> : Fini en Easy, Normal, Hard et Very Hard ; King battu en Easy</td>
+			</tr>
+			<tr>
+				<td class="update-date">5 avril 2007</td>
+				<td>F-Zero X Expansion Kit</td>
+				<td>Nintendo 64 DD</td>
+				<td><i>GP Race </i> : DD-1 et DD-2 cup finies en Novice, Standard, Expert et Master</td>
+			</tr>
+			<tr>
+				<td class="update-date">28 mars 2007</td>
+				<td>Metal Gear Solid 2</td>
+				<td>Playstation 2</td>
+				<td>Tous les dog tags obtenus</td>
+			</tr>
+			<tr>
+				<td class="update-date">17 mars 2007</td>
+				<td>Metal Gear Solid 2</td>
+				<td>Playstation 2</td>
+				<td>Fini en European Extreme</td>
+			</tr>
+			<tr>
+				<td class="update-date">5 janvier 2007</td>
+				<td>Zelda Twilight Princess</td>
+				<td>Gamecube</td>
+				<td>Fini sans guide, avec 24/24 insectes, 51/60 spectres et 35/45 cinquièmes de cœur</td>
+			</tr>
+			<tr>
+				<td class="update-date">20 décembre 2006</td>
+				<td>Gears of War</td>
+				<td>XBox 360</td>
+				<td><i> Co-op</i> : Fini en insane</td>
+			</tr>		
+			<tr>
+				<td class="update-date">25 novembre 2006</td>
+				<td>Burnout Revenge</td>
+				<td>Playstation 2</td>
+				<td>Fini à 100% avec 18/24 signature takedowns</td>
+			</tr>
+			<tr>
+				<td class="update-date">8 octobre 2006</td>
+				<td>MGS3 Subsistence</td>
+				<td>Playstation 2</td>
+				<td>Metal Gear (MSX) fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">4 octobre 2006</td>
+				<td>God of War</td>
+				<td>Playstation 2</td>
+				<td>Fini en spartiate avec toutes magies/armes/upgrades à fond</td>
+			</tr>
+			<tr>
+				<td class="update-date">5 septembre 2006</td>
+				<td>Baten Kaitos</td>
+				<td>Gamecube</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">5 août 2006</td>
+				<td>Final Fantasy VII</td>
+				<td>Playstation</td>
+				<td>Level 99 (max) pour Clad, Rouge13 et Tifa</td>
+			</tr>
+			<tr>
+				<td class="update-date">7 juillet 2006</td>
+				<td>Final Fantasy VII</td>
+				<td>Playstation</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 avril 2006</td>
+				<td>MGS2 Substance</td>
+				<td>Playstation 2</td>
+				<td><i>Skateboarding</i> : Fini avec Snake rang A</td>
+			</tr>
+			<tr>
+				<td class="update-date">19 mars 2006</td>
+				<td>MGS2 Substance</td>
+				<td>Playstation 2</td>
+				<td><i>Snake Tales</i> : Tous finis (A à E)</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 mars 2006</td>
+				<td>Donkey Kong Jungle Beat</td>
+				<td>Gamecube</td>
+				<td>Fini avec 18/18 médailles platine</td>
+			</tr>
+			<tr>
+				<td class="update-date">26 février 2006</td>
+				<td>Donkey Kong Jungle Beat</td>
+				<td>Gamecube</td>
+				<td>Fini avec la 2ème fin, 18/18 médailles d'or et 6/18 médailles de platine</td>
+			</tr>
+			<tr>
+				<td class="update-date">25 février 2006</td>
+				<td>Donkey Kong Jungle Beat</td>
+				<td>Gamecube</td>
+				<td>Fini avec la 1ère fin, 15/18 médailles de bronze et d'argent, 5/18 médailles d'or et 1/18 de platine</td>
+			</tr>
+			<tr>
+				<td class="update-date">5 février 2006</td>
+				<td>Zelda Link's Awakening</td>
+				<td>Game Boy</td>
+				<td>Fini avec 0 morts</td>
+			</tr>
+			<tr>
+				<td class="update-date">6 janvier 2006</td>
+				<td>God of War</td>
+				<td>Playstation 2</td>
+				<td>Fini en Divinité</td>
+			</tr>
+
+			<tr>
+				<td class="update-date">25 décembre 2005</td>
+				<td>Mega Man X</td>
+				<td>Super Nintendo</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">20 décembre 2005</td>
+				<td>God of War</td>
+				<td>Playstation 2</td>
+				<td><i>Trésors - Défi des dieux</i> : Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">15 décembre 2005</td>
+				<td>MGS2 Substance</td>
+				<td>Playstation 2</td>
+				<td><i>Missions</i> : Finies à 100% pour tous les personnages (511/511 missions) avec 421/511 highscores</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 décembre 2005</td>
+				<td>Gran Turismo 4 Prologue</td>
+				<td>Playstation 2</td>
+				<td><i>Mode entraînement</i> : Fini avec 46/46 médailles d'or et 8111 pts</td>
+			</tr>
+			<tr>
+				<td class="update-date">29 novembre 2005</td>
+				<td>Wave Race 64</td>
+				<td>Nintendo 64</td>
+				<td><i>Championship </i> : Fini en expert et reverse</td>
+			</tr>
+			<tr>
+				<td class="update-date">28 novembre 2005</td>
+				<td>Wave Race 64</td>
+				<td>Nintendo 64</td>
+				<td><i>Championship </i> : Fini en normal et hard</td>
+			</tr>
+			<tr>
+				<td class="update-date">20 novembre 2005</td>
+				<td>Streets of Rage 3</td>
+				<td>Megadrive</td>
+				<td>Fini en easy avec Zan sans perdre de vie et 260 680 pts ; Fini en easy avec Blaze sans perdre de vie et 256 160 pts</td>
+			</tr>
+			<tr>
+				<td class="update-date">11 novembre 2005</td>
+				<td>Streets of Rage 3</td>
+				<td>Megadrive</td>
+				<td>Fini en easy avec Axel sans perdre de vie et 257 220 pts</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 novembre 2005</td>
+				<td>Streets of Rage 3</td>
+				<td>Megadrive</td>
+				<td>Fini en normal avec Skate sans continu ; Fini en easy avec Skate sans perdre de vie et 238 560 pts</td>
+			</tr>
+			<tr>
+				<td class="update-date">1 novembre 2005</td>
+				<td>Tintin au Tibet</td>
+				<td>Super Nintendo</td>
+				<td>Fini en moyen</td>
+			</tr>
+			<tr>
+				<td class="update-date">7 octobre 2005</td>
+				<td>Super Metroid</td>
+				<td>Super Nintendo</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">4 octobre 2005</td>
+				<td>Gran Turismo Concept 2002 Tokyo-Geneva</td>
+				<td>Playstation 2</td>
+				<td>Fini à 100%</td>
+			</tr>
+			<tr>
+				<td class="update-date">19 septembre 2005</td>
+				<td>Diddy Kong Racing</td>
+				<td>Nintendo 64</td>
+				<td><i>Adventure 2</i> : Fini avec 47/47 ballons, Drumstick débloqué</td>
+			</tr>
+			<tr>
+				<td class="update-date">15 septembre 2005</td>
+				<td>Diddy Kong Racing</td>
+				<td>Nintendo 64</td>
+				<td><i>Tracks</i> : T.T. battu sur toutes les courses (20/20)</td>
+			</tr>
+			<tr>
+				<td class="update-date">14 septembre 2005</td>
+				<td>Diddy Kong Racing</td>
+				<td>Nintendo 64</td>
+				<td><i>Adventure</i> : Fini avec 47/47 ballons</td>
+			</tr>
+			<tr>
+				<td class="update-date">3 août 2005</td>
+				<td>Tekken 5</td>
+				<td>Playstation 2</td>
+				<td><i>Story Battle </i> : Fini en medium avec Feng, Hwoarang et Bryan</td>
+			</tr>
+			<tr>
+				<td class="update-date">2 août 2005</td>
+				<td>God of War</td>
+				<td>Playstation 2</td>
+				<td>Fini en normal</td>
+			</tr>
+			<tr>
+				<td class="update-date">2 août 2005</td>
+				<td>Tekken 5</td>
+				<td>Playstation 2</td>
+				<td><i>Story Battle </i> : Fini en medium avec Marduk, Lei et King</td>
+			</tr>
+
+<!-- <li><FONT COLOR="#008000">16 juillet 2005 : </FONT>mario star (maj 08/2024 : pas compris ce que ça voulait dire...)<BR></li> -->
+
+			<tr>
+				<td class="update-date">15 juillet 2005</td>
+				<td>Mario Power Tennis</td>
+				<td>Gamecube</td>
+				<td><i>Tournoi</i> : 2 derniers tournois en double remportés avec Luigi</td>
+			</tr>
+			<tr>
+				<td class="update-date">14 juillet 2005</td>
+				<td>Mario Power Tennis</td>
+				<td>Gamecube</td>
+				<td><i>Tournoi</i> : 8/8 tournois remportés en simple et 6/8 en double, avec Luigi</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 juillet 2005</td>
+				<td>Mario Kart Double Dash</td>
+				<td>Gamecube</td>
+				<td><i>Grand Prix</i> : Grand Chelem remporté en Miroir</td>
+			</tr>
+			<tr>
+				<td class="update-date">9 juillet 2005</td>
+				<td>Mario Kart Double Dash</td>
+				<td>Gamecube</td>
+				<td><i>Grand Prix</i> : Grand Chelem remporté en 50/100/150cc, 4/4 coupes remportées en Miroir</td>
+			</tr>
+			<tr>
+				<td class="update-date">7 juillet 2005</td>
+				<td>Mario Kart Double Dash</td>
+				<td>Gamecube</td>
+				<td><i>Grand Prix</i> : 4/4 coupes remportées en 50/100/150cc</td>
+			</tr>
+			<tr>
+				<td class="update-date">3 juillet 2005</td>
+				<td>GoldenEye 007</td>
+				<td>Nintendo 64</td>
+				<td>Nouveaux records solo qui me permettent de passer sous 1h40 Overall Time et sous 3h30 Rare Overal Time</td>
+			</tr>
+			<tr>
+				<td class="update-date">13 juin 2005</td>
+				<td>Rogue Leader</td>
+				<td>Gamecube</td>
+				<td>15ème et dernière médaille ace (Mission 9)</td>
+			</tr>
+			<tr>
+				<td class="update-date">12 juin 2005</td>
+				<td>Rogue Leader</td>
+				<td>Gamecube</td>
+				<td>14ème médaille ace (Endurance)</td>
+			</tr>
+			<tr>
+				<td class="update-date">11 juin 2005</td>
+				<td>Rogue Leader</td>
+				<td>Gamecube</td>
+				<td>15ème médaille d'or (Endurance) + 13 médailles ace</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 juin 2005</td>
+				<td>Rogue Leader</td>
+				<td>Gamecube</td>
+				<td>14ème médaille d'or (Mission 9)</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 juin 2005</td>
+				<td>Chiki Chiki Boys</td>
+				<td>Megadrive</td>
+				<td>Fini en normal</td>
+			</tr>
+			<tr>
+				<td class="update-date">8 juin 2005</td>
+				<td>Rogue Leader</td>
+				<td>Gamecube</td>
+				<td>13ème médaille d'or (Mission 1)</td>
+			</tr>
+			<tr>
+				<td class="update-date">21 mai 2005</td>
+				<td>Gran Turismo 3 : A-Spec</td>
+				<td>Playstation 2</td>
+				<td><i>Mode Gran Turismo - Épreuves de permis</i> : +1 médaille d'or (S7) --> 47/48 médailles d'or</td>
+			</tr>
+			<tr>
+				<td class="update-date">13 mai 2005</td>
+				<td>Gran Turismo 3 : A-Spec</td>
+				<td>Playstation 2</td>
+				<td><i>Mode Gran Turismo - Épreuves de permis</i> : +2 médailles d'or (S5 et S6) --> 46/48 médailles d'or</td>
+			</tr>
+			<tr>
+				<td class="update-date">24 avril 2005</td>
+				<td>Tiny Toon Adventures</td>
+				<td>Megadrive</td>
+				<td><i>Story</i> : Fini en easy</td>
+			</tr>
+			<tr>
+				<td class="update-date">23 avril 2005</td>
+				<td>Tiny Toon Adventures</td>
+				<td>Megadrive</td>
+				<td><i>Story</i> : Fini en hard et extra hard</td>
+			</tr>
+			<tr>
+				<td class="update-date">22 avril 2005</td>
+				<td>Tiny Toon Adventures</td>
+				<td>Megadrive</td>
+				<td><i>Story</i> : Fini en normal</td>
+			</tr>
+			<tr>
+				<td class="update-date">31 mars 2005</td>
+				<td>TimeSplitters Future Perfect</td>
+				<td>Playstation 2</td>
+				<td><i>Ligue Arcade et Défis</i> : 48/48 médailles de platine</td>
+			</tr>
+			<tr>
+				<td class="update-date">27 mars 2005</td>
+				<td>TimeSplitters Future Perfect</td>
+				<td>Playstation 2</td>
+				<td><!-- Acheté le 24 mars -->Fini à 100% (soit story fini en hard et 48/48 défis finis avec au moins l'or)</td>
+			</tr>
+			<tr>
+				<td class="update-date">15 mars 2005</td>
+				<td>Metal Gear Solid 3</td>
+				<td>Playstation 2</td>
+				<td><i>Duel : </i>Fini en normal</td>
+			</tr>
+			<tr>
+				<td class="update-date">13 mars 2005</td>
+				<td>Metal Gear Solid 3</td>
+				<td>Playstation 2</td>
+				<td>Fini en very easy et easy</td>
+			</tr>
+			<tr>
+				<td class="update-date">12 mars 2005</td>
+				<td>Metal Gear Solid 3</td>
+				<td>Playstation 2</td>
+				<td>Fini en european extreme, puis en normal</td>
+			</tr>
+			<tr>
+				<td class="update-date">9 mars 2005</td>
+				<td>Metal Gear Solid 3</td>
+				<td>Playstation 2</td>
+				<td>Fini en extreme</td>
+			</tr>
+			<tr>
+				<td class="update-date">6 mars 2005</td>
+				<td>Metal Gear Solid 3</td>
+				<td>Playstation 2</td>
+				<td><!--Acheté le 4 mars -->Fini en hard</td>
+			</tr>
+			<tr>
+				<td class="update-date">27 février 2005</td>
+				<td>Dr. Robotnik</td>
+				<td>Megadrive</td>
+				<td><i>Scénario mode</i> : Fini en normal</td>
+			</tr>
+			<tr>
+				<td class="update-date">21 février 2005</td>
+				<td>WRC 4</td>
+				<td>Playstation 2</td>
+				<td><i>Championnat</i> : Remporté en WRC professionnel</td>
+			</tr>
+			<tr>
+				<td class="update-date">14 février 2005</td>
+				<td>Gunstar Heroes</td>
+				<td>Megadrive</td>
+				<td>Fini en easy avec 0 continues (5 131 673 pts); fini en normal avec 0 continues (5 294 586 pts)</td>
+			</tr>
+			<tr>
+				<td class="update-date">7 février 2005</td>
+				<td>World of Illusion</td>
+				<td>Megadrive</td>
+				<td>Fini avec Mickey et Donald</td>
+			</tr>
+			<tr>
+				<td class="update-date">5 février 2005</td>
+				<td>Comix Zone</td>
+				<td>Megadrive</td>
+				<td>Fini à 100% avec 87 250 pts</td>
+			</tr>
+			<tr>
+				<td class="update-date">29 janvier 2005</td>
+				<td>Driver</td>
+				<td>Playstation 1</td>
+				<td>Fini, temps de la dernière mission : 2m29s23</td>
+			</tr>
+			<tr>
+				<td class="update-date">22 janvier 2005</td>
+				<td>Grand Slam : The Tennis Tournament 92 (JAP)</td>
+				<td>Megadrive</td>
+				<td><i>Circuits</i> : Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">19 janvier 2005</td>
+				<td>Landstalker</td>
+				<td>Megadrive</td>
+				<td>Fini</td>
+			</tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<div id="2000-2004" class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th class="date-col">Date</th>
+                <th class="game-col">Jeu</th>
+				<th class="console-col">Console</th>
+                <th class="details-col">Détails</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+				<td class="update-date">22 décembre 2004</td>
+				<td>Devil May Cry</td>
+				<td>Playstation 2</td>
+				<td>Fini en hard</td>
+			</tr>
+			<tr>
+				<td class="update-date">13 décembre 2004</td>
+				<td>The Legend of Galahad</td>
+				<td>Megadrive</td>
+				<td>Fini en normal avec 3 vies et 0 crédits (min settings) et 1 293 100 pts</td>
+			</tr>
+			<tr>
+				<td class="update-date">12 décembre 2004</td>
+				<td>The Legend of Galahad</td>
+				<td>Megadrive</td>
+				<td>Fini en Normal avec 5 vies et 0 credits (defaut settings) ; Fini en Training avec 3 vies et 0 crédits (min settings) ; Fini en Hard avec 3 vies et 0 crédits (min settings) et 1 167 400 pts</td>
+			</tr>
+			<tr>
+				<td class="update-date">5 décembre 2004</td>
+				<td>Gran Turismo 3 : A-Spec</td>
+				<td>Playstation 2</td>
+				<td><i>Mode Gran Turismo - Épreuves de permis</i> : +9 médailles d'or dont 6 aujourd'hui --> 40/48 médailles d'or</td>
+			</tr>
+			<tr>
+				<td class="update-date">4 décembre 2004</td>
+				<td>Sonic the Hedgehog 3</td>
+				<td>Megadrive</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">29 novembre 2004</td>
+				<td>Gran Turismo 3 : A-Spec</td>
+				<td>Playstation 2</td>
+				<td><i>Mode Gran Turismo - Épreuves de permis</i> : +3 médailles d'or aujourd'hui --> 31/48 médailles d'or</td>
+			</tr>
+			<tr>
+				<td class="update-date">28 novembre 2004</td>
+				<td>Gran Turismo 3 : A-Spec</td>
+				<td>Playstation 2</td>
+				<td><i>Mode Gran Turismo - Épreuves de permis</i> : +6 médailles d'or dont 5 aujourd'hui --> 28/48 médailles d'or</td>
+			</tr>
+			<tr>
+				<td class="update-date">1 novembre 2004</td>
+				<td>Gran Turismo 3 : A-Spec</td>
+				<td>Playstation 2</td>
+				<td>Fini à 100%.<br><i>Mode Gran Turismo - Épreuves de permis</i> 22 médailles d'or, 12 d'argent et 14 de bronze</td>
+			</tr>
+			<tr>
+				<td class="update-date">28 octobre 2004</td>
+				<td>Streets of Rage 3</td>
+				<td>Megadrive</td>
+				<td>Fini en normal avec Skate (5 crédits)</td>
+			</tr>
+			<tr>
+				<td class="update-date">22 septembre 2004</td>
+				<td>Bust-A-Move 2</td>
+				<td>Nintendo 64</td>
+				<td><i>Player vs computer</i> : Fini en normal</td>
+			</tr>
+			<tr>
+				<td class="update-date">21 septembre 2004</td>
+				<td>Bust-A-Move 2</td>
+				<td>Nintendo 64</td>
+				<td><i>Time Attack</i> : Fini</td>
+			</tr>
+
+			<tr>
+				<td class="update-date">11 septembre 2004</td>
+				<td>Donkey Kong Country 3</td>
+				<td>Super Nintendo</td>
+				<td>Fini en 0h45</td>
+			</tr>
+			<tr>
+				<td class="update-date">13 août 2004</td>
+				<td>Columns</td>
+				<td>Megadrive</td>
+				<td>
+					<i>Original Mode</i> : 20 127 400 points, avec 9999 jewels (max) et level 199 (max) (partie "suicidée")<br>
+					Estimation du temps supplémentaire qu'il aurait fallu pour atteindre 99 999 999 points : 7h20<br>
+					Barème du level 199 : 1 ligne de 3 blocs = 6000 points, 4 blocs = 12 000, 5 blocs = 18 000<br>
+					Record en un coup : 48 600 points (3 lignes de 5 au level 180)
+				</td>
+			</tr>
+			<tr>
+				<td class="update-date">7 août 2004</td>
+				<td>Deus Ex</td>
+				<td>Playstation 2</td>
+				<td>Fini en réaliste</td>
+			</tr>
+			<tr>
+				<td class="update-date">16 juillet 2004</td>
+				<td>Yoshi's Island</td>
+				<td>Super Nintendo</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">23 juin 2004</td>
+				<td>Donkey Kong Country 3</td>
+				<td>Super Nintendo</td>
+				<td>Fini à 105% en 1h49</td>
+			</tr>
+			<tr>
+				<td class="update-date">11 juin 2004</td>
+				<td>Donkey Kong Country 3</td>
+				<td>Super Nintendo</td>
+				<td>Fini à 105% en 4h35</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 juin 2004</td>
+				<td>Super Mario 64</td>
+				<td>Nintendo 64</td>
+				<td>Fini avec 16 étoiles en 35m27s RTA (PAL) (depuis sélection partie à étoile finale)</td>
+			</tr>
+			<tr>
+				<td class="update-date">4 juin 2004</td>
+				<td>Super Mario 64</td>
+				<td>Nintendo 64</td>
+				<td>Fini avec 16 étoiles</td>
+			</tr>
+			<tr>
+				<td class="update-date">15 mai 2004</td>
+				<td>Altered Beast</td>
+				<td>Megadrive</td>
+				<td>Fini en Normal avec 550 900 pts</td>
+			</tr>
+			<tr>
+				<td class="update-date">12 mai 2004</td>
+				<td>Conker's Bad Fur Day</td>
+				<td>Nintendo 64</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">17 avril 2004</td>
+				<td>MGS Twin Snakes</td>
+				<td>Gamecube</td>
+				<td>Fini en Extreme, SP items off en 1h21m23s, sans ration, rang BigBoss</td>
+			</tr>
+			<tr>
+				<td class="update-date">16 avril 2004</td>
+				<td>MGS Twin Snakes</td>
+				<td>Gamecube</td>
+				<td>Fini en Extreme, SP items off en 1h32m57s, rang BigBoss</td>
+			</tr>
+			<tr>
+				<td class="update-date">15 avril 2004</td>
+				<td>MGS Twin Snakes</td>
+				<td>Gamecube</td>
+				<td>Fini en Normal, SP items off en 1h13m31s et fini en Extreme, SP items off en 1h47m50s</td>
+			</tr>
+			<tr>
+				<td class="update-date">5 avril 2004</td>
+				<td>MGS Twin Snakes</td>
+				<td>Gamecube</td>
+				<td>Fini en Easy, SP items off en 1h15m51s</td>
+			</tr>
+			<tr>
+				<td class="update-date">4 avril 2004</td>
+				<td>MGS Twin Snakes</td>
+				<td>Gamecube</td>
+				<td>Fini en Very Easy, SP items off en 1h18m30s</td>
+			</tr>
+			<tr>
+				<td class="update-date">3 avril 2004</td>
+				<td>MGS Twin Snakes</td>
+				<td>Gamecube</td>
+				<td>Fini en Very Easy avec 100% des dog-tags et Fini en Hard avec 100% des dog-tags</td>
+			</tr>
+			<tr>
+				<td class="update-date">2 avril 2004</td>
+				<td>MGS Twin Snakes</td>
+				<td>Gamecube</td>
+				<td>Fini en Easy avec 100% des dog-tags</td>
+			</tr>
+			<tr>
+				<td class="update-date">1 avril 2004</td>
+				<td>MGS Twin Snakes</td>
+				<td>Gamecube</td>
+				<td>Fini en Normal avec 100% des dog-tags</td>
+			</tr>
+			<tr>
+				<td class="update-date">31 mars 2004</td>
+				<td>MGS Twin Snakes</td>
+				<td>Gamecube</td>
+				<td>Fini en Extreme avec 100% des dog-tags</td>
+			</tr>
+			<tr>
+				<td class="update-date">30 mars 2004</td>
+				<td>MGS Twin Snakes</td>
+				<td>Gamecube</td>
+				<td>Fini en Extreme</td>
+			</tr>
+			<tr>
+				<td class="update-date">29 mars 2004</td>
+				<td>MGS Twin Snakes</td>
+				<td>Gamecube</td>
+				<td>Fini en Hard</td>
+			</tr>
+			<tr>
+				<td class="update-date">28 février 2004</td>
+				<td>GoldenEye 007</td>
+				<td>Nintendo 64</td>
+				<td>Nouveaux records solo qui me permettent de passer sous 1h50 Overall Time</td>
+			</tr>
+			<tr>
+				<td class="update-date">25 février 2004</td>
+				<td>Super Hang-On</td>
+				<td>Megadrive</td>
+				<td><i>Arcade Mode</i> : Fini en Junior</td>
+			</tr>
+			<tr>
+				<td class="update-date">24 février 2004</td>
+				<td>Super Hang-On</td>
+				<td>Megadrive</td>
+				<td><i>Arcade Mode</i> : Fini en Beginner</td>
+			</tr>
+			<tr>
+				<td class="update-date">11 février 2004</td>
+				<td>Metroid Prime</td>
+				<td>Gamecube</td>
+				<td>Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">22 janvier 2004</td>
+				<td>Sonic & Knuckles</td>
+				<td>Megadrive</td>
+				<td>Fini avec Sonic</td>
+			</tr>
+			<tr>
+				<td class="update-date">21 novembre 2003</td>
+				<td>F-Zero GX</td>
+				<td>Gamecube</td>
+				<td><i>Grand Prix</i> : 4 dernières vidéos de fin débloquées (Total : 41/41)</td>
+			</tr>
+			<tr>
+				<td class="update-date">20 novembre 2003</td>
+				<td>F-Zero GX</td>
+				<td>Gamecube</td>
+				<td><i>Grand Prix</i> : 11 nouvelles vidéos de fin débloquées (Total 37/41)</td>
+			</tr>
+			<tr>
+				<td class="update-date">17 novembre 2003</td>
+				<td>F-Zero GX</td>
+				<td>Gamecube</td>
+				<td><i>Time Attack</i> : 26ème et dernier Staff Ghost battu (Cylinder Knot)<br><i>Grand Prix</i> : 2 nouvelles vidéos de fin débloquées (Total 26/41)</td>
+			</tr>
+			<tr>
+				<td class="update-date">16 novembre 2003</td>
+				<td>F-Zero GX</td>
+				<td>Gamecube</td>
+				<td><i>Grand Prix</i> : 17 vidéos de fin des personnages débloquées aujourd'hui (Total 24/41)</td>
+			</tr>
+
+			<tr>
+				<td class="update-date">15 novembre 2003</td>
+				<td>F-Zero GX</td>
+				<td>Gamecube</td>
+				<td><i>Time Attack</i> : 25ème Staff Ghost battu (Sonic Oval)</td>
+			</tr>
+			<tr>
+				<td class="update-date">13 novembre 2003</td>
+				<td>F-Zero GX</td>
+				<td>Gamecube</td>
+				<td><i>Time Attack</i> : 24ème Staff Ghost battu (Ordeal)</td>
+			</tr>
+			<tr>
+				<td class="update-date">11 novembre 2003</td>
+				<td>F-Zero GX</td>
+				<td>Gamecube</td>
+				<td><i>Time Attack</i> : 6 Staff Ghosts battus aujourd'hui (Double Branches, Thunder Road, Meteor Stream, Spiral, Screw Drive, Twist Road) --> Total : 23/26</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 novembre 2003</td>
+				<td>F-Zero GX</td>
+				<td>Gamecube</td>
+				<td><i>Time Attack</i> : 9 Staff Ghosts battus aujourd'hui (Long Pipe, Intersection, Half Pipe, Lateral Shift, Undulation, Dragon Slope, Cylinder Wave, Slim-line Slits, Trident) --> Total : 17/26</td>
+			</tr>
+			<tr>
+				<td class="update-date">9 novembre 2003</td>
+				<td>F-Zero GX</td>
+				<td>Gamecube</td>
+				<td><i>Time Attack</i> : 8 Staff Ghosts battus aujourd'hui (Split Oval, Surface Slide, Loop Cross, Multiplex, Drift Highway, Aero Dive, Mobius Ring, Serial Gaps)</td>
+			</tr>
+			<tr>
+				<td class="update-date">7 novembre 2003</td>
+				<td>F-Zero GX</td>
+				<td>Gamecube</td>
+				<td><i>Story</i> : Missions 7 et 8 finies en Very Hard --> Mode Story fini en Very Hard</td>
+			</tr>
+			<tr>
+				<td class="update-date">6 novembre 2003</td>
+				<td>F-Zero GX</td>
+				<td>Gamecube</td>
+				<td><i>Story</i> : Mission 9 finie en Very Hard</td>
+			</tr>
+			<tr>
+				<td class="update-date">5 novembre 2003</td>
+				<td>F-Zero GX</td>
+				<td>Gamecube</td>
+				<td><i>Grand Prix</i> : Coupe AX remportée en Novice, Standard, Expert et Master</td>
+			</tr>
+			<tr>
+				<td class="update-date">4 novembre 2003</td>
+				<td>F-Zero GX</td>
+				<td>Gamecube</td>
+				<td><i>Story</i> : Mission 1 finie en Very Hard ;<br><i>Grand Prix</i> : Coupe Emeraude et Coupe Diamant finies en Master</td>
+			</tr>
+			<tr>
+				<td class="update-date">3 novembre 2003</td>
+				<td>F-Zero GX</td>
+				<td>Gamecube</td>
+				<td><i>Story</i> : Missions 3, 4 et 6 finies en Very Hard ;<br><i>Grand Prix</i> : Coupe Saphir Finie en Master</td>
+			</tr>
+			<tr>
+				<td class="update-date">2 novembre 2003</td>
+				<td>F-Zero GX</td>
+				<td>Gamecube</td>
+				<td><i>Story</i> : Missions 7 et 9 finies en Hard --> Mode Story fini en Hard ; Mission 5 FINIE en Very Hard ;<br><i>Grand Prix</i> : Coupe Diamant remportée en Expert</td>
+			</tr>
+			<tr>
+				<td class="update-date">1er novembre 2003</td>
+				<td>F-Zero GX</td>
+				<td>Gamecube</td>
+				<td><i>Story</i> : Missions 3-4-6-8 finies en Hard ;<br><i>Grand Prix</i> : Coupe Rubis remportée en Master, Coupe émeraude remportée en Expert, Coupe Diamant remportée en Novice et Standard</td>
+			</tr>
+			<tr>
+				<td class="update-date">31 octobre 2003</td>
+				<td>F-Zero GX</td>
+				<td>Gamecube</td>
+				<td><!-- Acheté aujourd'hui--><i>Story</i> : Mode story fini en Normal , missions 1-2-5 finies en Hard , mission 2 finie en Very Hard<br><i>Grand Prix</i> : Coupe rubis et saphir remportées en Novice, Standard et Expert, coupe émeraude remportée en Novice et Standard</td>
+			</tr>
+			<tr>
+				<td class="update-date">25 octobre 2003</td>
+				<td>F-Zero X</td>
+				<td>Nintendo 64</td>
+				<td><i>Time Attack</i> : 23ème (Red Canyon 2) puis 24ème et dernier (Mute City) Staff Ghosts battus ; Reste des temps mis à jour</td>
+			</tr>
+			<tr>
+				<td class="update-date">17 octobre 2003</td>
+				<td>Aladdin</td>
+				<td>Megadrive</td>
+				<td>Fini en Facile</td>
+			</tr>
+			<tr>
+				<td class="update-date">14 octobre 2003</td>
+				<td>Aladdin</td>
+				<td>Megadrive</td>
+				<td>Fini en Difficile</td>
+			</tr>
+			<tr>
+				<td class="update-date">13 octobre 2003</td>
+				<td>Aladdin</td>
+				<td>Megadrive</td>
+				<td>Fini en Normal</td>
+			</tr>
+			<tr>
+				<td class="update-date">12 octobre 2003</td>
+				<td>Rogue Leader</td>
+				<td>Gamecube</td>
+				<td>12 médailles d'or et 2 d'argent</td>
+			</tr>
+			<tr>
+				<td class="update-date">11 octobre 2003</td>
+				<td>Rogue Leader</td>
+				<td>Gamecube</td>
+				<td>10 médailles d'or et 3 d'argent</td>
+			</tr>
+			<tr>
+				<td class="update-date">28 septembre 2003</td>
+				<td>Astérix the Great Rescue</td>
+				<td>Megadrive</td>
+				<td>Fini en difficile</td>
+			</tr>
+			<tr>
+				<td class="update-date">19 septembre 2003</td>
+				<td>Rogue Leader</td>
+				<td>Gamecube</td>
+				<td>3 médailles d'or et 9 d'argent</td>
+			</tr>
+			<tr>
+				<td class="update-date">16 septembre 2003</td>
+				<td>Rogue Leader</td>
+				<td>Gamecube</td>
+				<td>4 médailles d'argent et 7 de bronze</td>
+			</tr>
+			<tr>
+				<td class="update-date">15 septembre 2003</td>
+				<td>Rogue Leader</td>
+				<td>Gamecube</td>
+				<td>Fini avec 1 médaille d'argent et 5 de bronze</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 septembre 2003</td>
+				<td>Streets of Rage</td>
+				<td>Megadrive</td>
+				<td>Fini en Hard</td>
+			</tr>
+			<tr>
+				<td class="update-date">9 septembre 2003</td>
+				<td>Streets of Rage</td>
+				<td>Megadrive</td>
+				<td>Fini en Normal</td>
+			</tr>
+			<tr>
+				<td class="update-date">8 septembre 2003</td>
+				<td>Streets of Rage</td>
+				<td>Megadrive</td>
+				<td>Fini en Easy</td>
+			</tr>
+			<tr>
+				<td class="update-date">7 septembre 2003</td>
+				<td>Les Schtroumpfs</td>
+				<td>Game Boy</td>
+				<td>Fini en Difficile et en Facile</td>
+			</tr>
+			<tr>
+				<td class="update-date">1er septembre 2003</td>
+				<td>Super Mario Land</td>
+				<td>Game Boy</td>
+				<td>Fini deux fois d'affilée ; nouveau meilleur score : 999 999 points</td>
+			</tr>
+			<tr>
+				<td class="update-date">30 août 2003</td>
+				<td>Deus Ex</td>
+				<td>Playstation 2</td>
+				<td>Fini en Difficile</td>
+			</tr>
+			<tr>
+				<td class="update-date">27 août 2003</td>
+				<td>F-Zero X</td>
+				<td>Nintendo 64</td>
+				<td><i>Time Attack</i> : 4 nouveaux Staff Ghosts battus (Rainbow Road, Devil's Forest 3, Silence 2 et Sand Ocean 2). Plus que 2 !</td>
+			</tr>
+			<tr>
+				<td class="update-date">21 août 2003</td>
+				<td>F-Zero X</td>
+				<td>Nintendo 64</td>
+				<td>Ajout du tableau de mes temps en Time Attack</td>
+			</tr>
+			<tr>
+				<td class="update-date">19 août 2003</td>
+				<td>World Rally Championship</td>
+				<td>Playstation 2</td>
+				<td><i>Championnat</i> : Fini en normal et en professionnel</td>
+			</tr>
+			<tr>
+				<td class="update-date">10 août 2003</td>
+				<td>Divers jeux</td>
+				<td>Divers</td>
+				<td>Ajout de Wave Race (N64), Diddy Kong Racing (N64), Dynamite Cop (Dreamcast) et d'une rubrique PC (peu fournie)</td>
+			</tr>
+			<tr>
+				<td class="update-date">9 août 2003</td>
+				<td>Virtua Tennis</td>
+				<td>Dreamcast</td>
+				<td><i>Arcade</i> : Fini en Hard</td>
+			</tr>
+			<tr>
+				<td class="update-date">9 août 2003</td>
+				<td>Dead or Alive 2</td>
+				<td>Dreamcast</td>
+				<td><i>Story</i> : Fini en Normal</td>
+			</tr>
+			<tr>
+				<td class="update-date">6 août 2003</td>
+				<td>Les Schtroumpfs</td>
+				<td>Megadrive</td>
+				<td>Fini en difficile</td>
+			</tr>
+			<tr>
+				<td class="update-date">6 août 2003</td>
+				<td>World Cup Italia '90</td>
+				<td>Megadrive</td>
+				<td><i>World Cup</i> : Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">3 août 2003</td>
+				<td>Virtua Tennis</td>
+				<td>Dreamcast</td>
+				<td><i>Arcade</i> : Fini en normal</td>
+			</tr>
+			<tr>
+				<td class="update-date">3 août 2003</td>
+				<td>Columns</td>
+				<td>Megadrive</td>
+				<td><i>Menu - Flash Columns</i> : Nouveaux temps en Novice, Amateur et Pro</td>
+			</tr>
+			<tr>
+				<td class="update-date">30 juillet 2003</td>
+				<td>Columns</td>
+				<td>Megadrive</td>
+				<td><i>Menu - Flash Columns</i> : Tous les niveaux du mode finis aujourd'hui en Pro</td>
+			</tr>
+			<tr>
+				<td class="update-date">28 juillet 2003</td>
+				<td>Wimbledon Tennis</td>
+				<td>Megadrive</td>
+				<td><!-- De retour de vacances, je me suis racheté une Megadrive -->Fini</td>
+			</tr>
+			<tr>
+				<td class="update-date">12 juillet 2003</td>
+				<td>F-Zero X</td>
+				<td>Nintendo 64</td>
+				<td><i>GP Race</i> : Toutes les coupes en Master remportées avec 4 vaisseaux ;<br><i>Time Attack</i> : 18ème Staff Ghost battu<br><i>Death Race</i> : nouveau PR</td>
+			</tr>
+			<tr>
+				<td class="update-date">8 juillet 2003</td>
+				<td>F-Zero X</td>
+				<td>Nintendo 64</td>
+				<td><i>GP Race</i> : Toutes les coupes en Master remportées avec 2 vaisseaux sur 30 ; objectif final : toutes les coupes Master avec tous les vaisseaux (5*30=150)</td>
+			</tr>
+			<tr>
+				<td class="update-date">3 juillet 2003</td>
+				<td>Medal of Honor :<br>En première ligne</td>
+				<td>Playstation 2</td>
+				<td>Fini en Facile aujourd'hui</td>
+			</tr>
+			<tr>
+				<td class="update-date">27 juin 2003</td>
+				<td>Mega Man III</td>
+				<td>Game Boy</td>
+				<td>Fini aujourd'hui</td>
+			</tr>
+			<tr>
+				<td class="update-date">26 juin 2003</td>
+				<td>Divers jeux</td>
+				<td>Divers</td>
+				<td>Ajout de Dragon (Super Nintendo), Driver (Playstation) et Sonic Adventure (Dreamcast)</td>
+			</tr>
+			<tr>
+				<td class="update-date">25 juin 2003</td>
+				<td>Création de la page</td>
+				<td>-</td>
+				<td>Il reste encore quelques jeux à rajouter</td>
+			</tr>
+        </tbody>
+    </table>
+</div>
+
+</div>
+
+
+
+
+
+<div id="section3" class="section">
+
+<h2>Récapitulatif :</h2>
+
+<!-- Blocs par console -->
+<div id="consoleBlocks">
+	<div class="console-block" onclick="showConsole('GB')">Game Boy</div>
+	<div class="console-block" onclick="showConsole('NES')">NES</div>
+	<div class="console-block" onclick="showConsole('MD')">Megadrive</div>
+	<div class="console-block" onclick="showConsole('MCD')">Mega-CD</div>
+	<div class="console-block" onclick="showConsole('SNES')">Super Nintendo</div>
+	<div class="console-block" onclick="showConsole('PS1')">Playstation</div>
+    <div class="console-block" onclick="showConsole('N64')">Nintendo 64</div>
+	<div class="console-block" onclick="showConsole('N64DD')">Nintendo 64 DD</div>
+	<div class="console-block" onclick="showConsole('DC')">Dreamcast</div>
+	<div class="console-block" onclick="showConsole('PS2')">Playstation 2</div>
+	<div class="console-block" onclick="showConsole('NGC')">Gamecube</div>
+	<div class="console-block" onclick="showConsole('DS')">Nintendo DS</div>
+    <div class="console-block" onclick="showConsole('PSP')">Playstation Portable</div>
+	<div class="console-block" onclick="showConsole('X360')">XBox 360</div>
+	<div class="console-block" onclick="showConsole('PS3')">Playstation 3</div>
+	<div class="console-block" onclick="showConsole('SW')">Switch</div>
+	<div class="console-block" onclick="showConsole('SW2')">Switch 2</div>
+	<div class="console-block" onclick="showConsole('PC')">PC</div>
+</div>
+
+
+
+<div id="GB" class="console-container">
+  <h2 class="console-title">Game Boy</h2>
+
+  <h4 class="game-title">Astérix</h4>
+  FINI avec 264 110 points<br><br> <!-- Max vies : 36 vies -->
+
+  <h4 class="game-title">DuckTales : La bande à Picsou</h4>
+  FINI avec 11 XXX XXX points<br><br>
+
+  <h4 class="game-title">Football International</h4>
+  <u>World Cup</u> : Fini avec toutes les équipes (8/8)<br><br>
+
+  <h4 class="game-title">Les Schtroumpfs</h4>
+  FINI en <i>Facile</i>, <i>Moyen</i> et <i>Dur</i><br><br>
+
+  <h4 class="game-title">Mega Man II</h4>
+  FINI<br><br> <!-- Max vies : 9 vies -->
+
+  <h4 class="game-title">Mega Man III</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Mega Man IV</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Mystic Quest</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Nintendo World Cup</h4>
+  FINI avec toutes les équipes (13/13)<br>
+  Meilleur score : Germany VS U.R.S.S. : 116-00<br><br>
+
+  <h4 class="game-title">Prince of Persia</h4>
+  FINI<br><br>
+  
+  <h4 class="game-title">Revenge of the Gator</h4>
+  Meilleur score : 1 6XX XXX points<br><br>
+
+  <h4 class="game-title">Super Mario Land</h4>
+  FINI en "normal" et "difficile" (donc deux fois d'affilée)<br>
+  Meilleur score : 999 999 points (max)<br><br>
+
+  <h4 class="game-title">Super Mario Land 2 : 6 Golden Coins</h4>
+  FINI<br><br> <!-- Max vies : 99 vies -->
+
+  <h4 class="game-title">Tetris</h4>
+  <span class="underline">A-type</span> : 
+	<ul>
+		<li>Meilleur score : 421 XXX points (158 lignes)</li>
+		<li>Plus grand nombre de lignes : 200</li>
+	</ul>
+  <span class="underline">B-type</span> : 
+  	<ul>
+		<li>High 0 à 4 : Level 19 fini</li>
+		<li>High 5 : Level 17 fini</li>
+	</ul>
+  <br>
+  
+  <h4 class="game-title">The Bugs Bunny Crazy Castle</h4>
+  FINI<br><br>
+  
+  <h4 class="game-title">The Legend of Zelda : Link's Awakening</h4>
+  FINI avec 0 morts<br><br>
+
+  <h4 class="game-title">Tom & Jerry</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Track Meet</h4>
+  FINI<br><br>
+  <!-- Meilleurs scores : 100m : 9s57 ; 100m haies : 12s25 ; Javelot : 72m36 ; Saut en longueur : 8m85 ; Lancer du disque : 43m89 ; Haltérophilie : 190 kg ; Saut à la perche : 4m64 -->
+
+  
+</div>
+
+
+
+
+<div id="NES" class="console-container">
+
+  <h2 class="console-title">NES</h2>
+
+  <h4 class="game-title">Dr. Mario (NSO)</h4>
+  Niveau 23 fini en speed <i>Medium</i><br>Niveau 21 fini en speed <i>High</i><br><br>
+
+  <h4 class="game-title">Zelda II : The Adventure of Link (NSO)</h4>
+  FINI<br><br>
+
+</div>
+
+
+
+<div id="MD" class="console-container">
+  <h2 class="console-title">Megadrive</h2>
+
+  <h4 class="game-title">Aladdin</h4>
+  FINI en <i>Practice</i>, <i>Normal</i> et <i>Difficult</i><br><br>
+
+  <h4 class="game-title">Altered Beast</h4>
+  FINI en <i>Normal</i> avec 550 900 points<br><br>
+
+  <h4 class="game-title">Astérix and the Great Rescue</h4>
+  FINI en <i>Difficile</i><br><br>
+
+  <h4 class="game-title">Chiki Chiki Boys</h4>
+  FINI en <i>Normal</i><br><br>
+
+  <h4 class="game-title">Columns</h4>
+  <span class="underline">Original Mode</span> : 20 127 400 points, 9999 jewels (max), level 199 (max), partie "suicidée" à ce stade<br><br>
+
+  <span class="underline">Mode Flash Columns</span> :<br>
+
+  <table>
+    <tr>
+      <th>Mes meilleurs temps</th>
+      <th>Novice</th>
+      <th>Amateur</th>
+      <th>Pro</th>
+    </tr>
+    <tr><td><i>Height 2</i></td><td>0m01</td><td>0m01</td><td>0m01</td></tr>
+    <tr><td><i>Height 3</i></td><td>0m03</td><td>0m05</td><td>0m08</td></tr>
+    <tr><td><i>Height 4</i></td><td>0m04</td><td>0m11</td><td>0m12</td></tr>
+    <tr><td><i>Height 5</i></td><td>0m09</td><td>0m10</td><td>0m14</td></tr>
+    <tr><td><i>Height 6</i></td><td>0m12</td><td>0m14</td><td>0m17</td></tr>
+    <tr><td><i>Height 7</i></td><td>0m21</td><td>0m37</td><td>0m39</td></tr>
+    <tr><td><i>Height 8</i></td><td>0m30</td><td>0m37</td><td>1m14</td></tr>
+    <tr><td><i>Height 9</i></td><td>0m44</td><td>1m02</td><td>1m46</td></tr>
+  </table>
+
+  <br>
+
+  <h4 class="game-title">Comix Zone</h4>
+  FINI à 100% avec 87 250 points<br><br>
+
+  <h4 class="game-title">Cosmic Spacehead</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Dr. Robotnik's Mean Bean Machine</h4>
+  <u>Scénario mode</u> : Fini en <i>Normal</i><br><br>
+  
+  <h4 class="game-title">Grand Slam : The Tennis Tournament 92 (JAP)</h4>
+  <u>Circuits</u> : Fini<br><br>
+
+  <h4 class="game-title">Gunstar Heroes</h4>
+  FINI en <i>Easy</i> et <i>Normal</i> (no continues)<br> <!-- no continues pour les deux modes -->
+  Meilleur score : 5 294 586 points en <i>Normal</i> <!--5 131 673 points en easy --><br><br>
+
+  <h4 class="game-title">Landstalker : Le Trésor du Roi Nole</h4>
+  FINI<br><br>
+  
+  <h4 class="game-title">Lemmings</h4>
+  FINI en <i>Fun</i>, <i>Tricky</i>, <i>Taxing</i>, <i>Mayhem</i>, <i>Present</i> et <i>Sunsoft</i>,  soit 180/180 niveaux<br><br>
+
+  <h4 class="game-title">Les Schtroumpfs</h4>
+  FINI en <i>Moyen</i> et <i>Difficile</i><br><br>
+
+  <h4 class="game-title">Sonic the Hedgehog Spinball</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Sonic the Hedgehog</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Sonic the Hedgehog 2</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Sonic the Hedgehog 3</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Sonic & Knuckles</h4>
+  FINI avec Sonic<br><br>
+  
+  <h4 class="game-title">Spot Goes to Hollywood</h4>
+  FINI en <i>Hard</i><br><br>
+  
+  <h4 class="game-title">Street Fighter II : Special Champion Edition</h4>
+  FINI avec Ryu <!--réglages par défaut : hyper 3 étoiles, difficulty 5 étoiles --><br><br>
+
+  <h4 class="game-title">Streets of rage</h4>
+  FINI en <i>Easy</i>, <i>Normal</i> et <i>Hard</i><br>
+  Meilleur score : 822 700 points en <i>Hard</i><br><br>
+
+  <h4 class="game-title">Streets of rage 2</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Streets of rage 3</h4>
+  FINI en <i>Easy</i> et <i>Normal</i><br>
+  <ul>
+	<li>FINI en <i>Easy</i> avec Axel, Blaze, Skate et Zan sans perdre de vie<br> <!-- sans perdre de vie pour chacun des persos -->
+	Meilleur score en <i>Easy</i> : 260 680 points avec Zan</li><br>
+	<li>FINI en <i>Normal</i> avec Skate sans continu <!--(par défaut, 3 vies) --></li>
+  </ul><br>
+
+  <h4 class="game-title">Super Hang-On</h4>
+  <span class="underline">Arcade Mode</span> : Fini en <i>Beginner</i> <!-- en 3m32s48 avec 29 391 980 pts -->  et <i>Junior</i> <!-- en 6m12s73 avec 25 029 120 pts --><br>
+  <span class="underline">Original Mode</span> : Fini avec toutes les pièces avant victoire finale<br><br>
+
+  <h4 class="game-title">The Legend of Galahad</h4>
+  FINI en <i>Training</i>, <i>Normal</i> et <i>Hard</i> avec minimum settings (3 vies, 0 crédits)<br> <!-- avec min settings pour chaque mode -->
+  Meilleur score : 1 293 100 points en <i>Normal</i>, 1 167 400 points en <i>Hard</i><br><br>
+
+  <h4 class="game-title">Tiny Toon Adventures : ACME All-Stars</h4>
+  <u>Story</u> : Fini en <i>Easy</i>, <i>Normal</i>, <i>Hard</i> et <i>Extra Hard</i><br><br>
+  <!-- Records : Bowling 119 (Hard) ; Foot 21-3 (Hard) et but en 2s (Extra hard) ; Basket : 81-16 (Easy) dont 25-2 last quarter -->
+
+  <h4 class="game-title">ToeJam & Earl in Panic on Funkotron</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Wimbledon Championship Tennis</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">World Cup Italia '90</h4>
+  <u>World Cup</u> : Fini avec le Brésil<br>
+  Meilleur score : Brésil VS Chine : 6-0<br><br>
+
+  <h4 class="game-title">World of Illusion starring Mickey Mouse and Donald Duck</h4>
+  FINI avec Mickey et Donald<br><br>
+</div>
+
+
+
+<div id="MCD" class="console-container">
+  <h2 class="console-title">Mega CD</h2>
+
+  <h4 class="game-title">Road Avenger</h4>
+  FINI<br><br>
+</div>
+
+
+
+<div id="SNES" class="console-container">
+  <h2 class="console-title">Super Nintendo</h2>
+
+  <h4 class="game-title">Donkey Kong Country</h4>
+  FINI à 101%<br><br>
+
+  <h4 class="game-title">Donkey Kong Country 2 : Diddy's Kong Quest</h4>
+  FINI à 102%<br><br>
+
+  <h4 class="game-title">Donkey Kong Country 3 : Dixie Kong's Double Trouble!</h4>
+  FINI à 103% et 105% (code TUFST)<br>
+  Record speedrun 105% : 1h49 (in-game time, multi-segmented)<br>
+  Record speedrun any% : 0h45 (in-game time, multi-segmented)<br>
+  Record Kourse de la berge : 55s54 (PAL)<br><br>
+
+  <h4 class="game-title">Dragon : The Bruce Lee Story</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Mega Man X</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Super Mario All-Stars</h4>
+  <u>Super Mario Bros. 3</u> : FINI<br><br>
+
+  <h4 class="game-title">Super Mario Kart</h4>
+  <u>Mariokart GP</u> : Toutes les coupes (4/4) remportées en <i>50cc</i>, <i>100cc</i> et <i>150cc</i> avec Koopa<br><br>
+
+  <h4 class="game-title">Super Mario World</h4>
+  FINI<br><br>
+  
+  <h4 class="game-title">Super Mario World 2 : Yoshi's Island</h4>
+  FINI avec 100 points sur tous les niveaux<br><br>
+
+  <h4 class="game-title">Super Metroid</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Tintin au Tibet</h4>
+  FINI en <i>Moyen</i><br><br>
+
+  <h4 class="game-title">The Legend of Zelda : A link to the Past</h4>
+  FINI<br><br>
+
+  
+</div>
+
+
+
+<div id="PS1" class="console-container">
+  <h2 class="console-title">Playstation</h2>
+
+  <h4 class="game-title">Driver</h4>
+  FINI<br><br>
+  <!-- Temps dernière mission : 2m29s23 -->
+  <!-- Autres records : L'accident en 2m13s76 ; Rudy en 1m24s23 -->
+
+  <h4 class="game-title">Final Fantasy VII</h4>
+  FINI<br>
+  Clad, Rouge13 et Tifa au niveau 99 (max)<br><br>
+</div>
+
+
+
+<div id="N64" class="console-container">
+  <h2 class="console-title">Nintendo 64</h2>
+
+  <h4 class="game-title">1080° Snowboarding</h4>
+  <u>Mode Challenge</u> : Fini en <i>Normal</i>, <i>Hard</i> et <i>Expert</i><br><br>
+
+  <h4 class="game-title">Bust-A-Move 2 Arcade Edition</h4>
+  <u>Time Attack</u> : Fini<br>
+  <u>Player vs Computer</u> : Fini en <i>Normal</i><br><br>
+
+  <h4 class="game-title">Conker's Bad Fur Day</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Diddy Kong Racing</h4>
+  <u>Adventure</u> : Fini avec 47/47 ballons<br>
+  <u>Adventure two</u> : Fini avec 47/47 ballons<br>
+  <u>Time Trial</u> : T.T. battu sur 20/20 circuits<br><br>
+
+  <h4 class="game-title">Donkey Kong 64</h4>
+  FINI à 96% avec 190 bananes<br><br>
+  
+  <h4 class="game-title">Dr. Mario 64 (NSO)</h4>
+  <u>Story</u> : Fini en Hard avec Mario et Wario<br><br>
+
+  <h4 class="game-title">F-Zero X</h4>
+
+  <span class="underline">GP Race</span> : 
+  <ul>
+	<li>Toutes les coupes (5/5) remportées en Novice, Standard, Expert et Master</li>
+	<li>Toutes les coupes en Master remportées avec 4/30 vaisseaux</li>
+  </ul><br>
+  <span class="underline">Time Attack</span> : 24/24 staff ghosts battus<br>
+
+  <table>
+    <tr>
+      <th>Mes records (PAL)</th>
+      <th>Meilleur Temps - Course</th>
+      <th>Meilleur Temps - Tour</th>
+      <th>Vitesse maximale</th>
+    </tr>
+
+    <tr><td><i>Mute City</i></td><td>1'26"367</td><td>0'24"838</td><td>1187</td></tr>
+    <tr><td><i>Silence</i></td><td>1'17"334</td><td>0'21"820</td><td>1233</td></tr>
+    <tr><td><i>Sand Ocean</i></td><td>1'18"607</td><td>0'22"943</td><td>1147</td></tr>
+    <tr><td><i>Devil's Forest</i></td><td>1'25"703</td><td>0'24"023</td><td>1140</td></tr>
+    <tr><td><i>Big Blue</i></td><td>1'39"069</td><td>0'31"507</td><td>1049</td></tr>
+    <tr><td><i>Port Town</i></td><td>1'31"081</td><td>0'27"387</td><td>1745</td></tr>
+    <tr><td><i>Sector Alpha</i></td><td>1'25"891</td><td>0'25"726</td><td>1082</td></tr>
+    <tr><td><i>Red Canyon</i></td><td>1'18"098</td><td>0'23"916</td><td>1278</td></tr>
+    <tr><td><i>Devil's Forest 2</i></td><td>1'26"520</td><td>0'26"507</td><td>1282</td></tr>
+    <tr><td><i>Mute City 2</i></td><td>1'17"698</td><td>0'22"597</td><td>1291</td></tr>
+    <tr><td><i>Big Blue 2</i></td><td>1'05"624</td><td>0'19"403</td><td>1078</td></tr>
+    <tr><td><i>White Land</i></td><td>1'40"024</td><td>0'30"706</td><td>1332</td></tr>
+    <tr><td><i>Fire Field</i></td><td>1'24"309</td><td>0'25"306</td><td>1602</td></tr>
+    <tr><td><i>Silence 2</i></td><td>1'28"952</td><td>0'27"409</td><td>1195</td></tr>
+    <tr><td><i>Sector Beta</i></td><td>1'47"916</td><td>0'33"753</td><td>1807</td></tr>
+    <tr><td><i>Red Canyon 2</i></td><td>1'41"724</td><td>0'30"419</td><td>1559</td></tr>
+    <tr><td><i>White Land 2</i></td><td>1'15"896</td><td>0'23"266</td><td>1081</td></tr>
+    <tr><td><i>Mute City 3</i></td><td>1'41"739</td><td>0'31"496</td><td>1228</td></tr>
+    <tr><td><i>Rainbow Road</i></td><td>2'17"228</td><td>0'41"982</td><td>1711</td></tr>
+    <tr><td><i>Devil's Forest 3</i></td><td>1'20"692</td><td>0'23"404</td><td>1149</td></tr>
+    <tr><td><i>Space Plant</i></td><td>2'09"352</td><td>0'39"763</td><td>1352</td></tr>
+    <tr><td><i>Sand Ocean 2</i></td><td>1'32"634</td><td>0'28"336</td><td>1182</td></tr>
+    <tr><td><i>Port Town 2</i></td><td>1'49"997</td><td>0'33"533</td><td>1157</td></tr>
+    <tr><td><i>Big Hand</i></td><td>2'22"982</td><td>0'43"941</td><td>1126</td></tr>
+
+  </table>
+
+  <br>
+
+  <span class="underline">Death Race</span> : 0'56"128 (PAL)<br><br>
+
+  <h4 class="game-title">GoldenEye 007</h4>
+  FINI en Agent, Secret Agent et 00 Agent<br>
+  Nombre de cheats obtenus : 23/23<br>
+  <!-- OLD Speedrun : <a href="http://www.geocities.com/megawabs/getimes.html">Mes records en solo !</a><br><br> -->
+  Speedrun : <a href="https://rankings.the-elite.net/~Wabs/goldeneye">Mes records en solo !</a><br><br>
+	<!-- Temps en 2-1 avec Idris :
+	Facility 00 en 1m49
+	Archives 00 en 1m19
+	Silo A en 2m06
+	Control SA en 7m44
+	Bunker 2 A en 0m45
+	Statue SA en 3m06 -->
+	
+  <h4 class="game-title">Mario Kart 64</h4>
+  <u>Mario GP</u> : Toutes les coupes (4/4) remportées en <i>50cc</i>, <i>100cc</i>, <i>150cc</i> et <i>Extra</i><br><br>
+  <u>Time Trial</u> : 
+	<ul>
+		<li>3/3 Staff Ghosts battus</li>
+		<li><a href="https://www.mariokart64.com/mk64/players/108">Mes records en Time Trial !</a></li>
+	</ul>
+	<br>
+  
+  <!-- Quelques splits sur certains PRs :
+	TT : 1'02'23 + 1'02'00 + 1'01'94 = 3'06'17
+	LR : 39'08 + 41'40 + 41'56 = 2'02'04
+	KD : 41'67 + 44'94 + 45'66 = 2'12'27
+	MMF : 31'00 + 31'34 + 30'38 = 1'32'72
+	CM (SC) : 30'77 + 32'47 + 32'67 = 1'35'91
+	YV (SC) : 11'19 + 43'87 + 41'27 = 1'36'33 -->
+
+  <h4 class="game-title">Paper Mario</h4>
+  FINI avec :
+  <ul>
+	<li>les 8/8 partenaires en rang ultra (soit 16/16 super blocs)</li>
+	<li>toutes les upgrades (50/50 PC et PF, 30/30 PB)</li>
+	<li>80/80 badges</li>
+	<li>160/160 morceaux d'étoile (dont 64 quizz)</li>
+	<li>50/50 recettes</li>
+  </ul><br>
+
+  <h4 class="game-title">Perfect Dark</h4>
+  <span class="underline">Missions Solo</span> : 
+	<ul>
+		<li>Fini en Agent, Agent Secret et Agent Perfect</li>
+		<!-- OLD : <li>Mes records en solo : <a href="http://www.geocities.com/megawabs/index.html">Cliquez ici !</a></li> -->
+		<li>Mes records en solo : <a href="https://rankings.the-elite.net/~Wabs/perfect-dark">Cliquez ici !</a></li>
+	</ul>
+  <span class="underline">Co-opération</span> : Fini en Agent, Agent Secret et Agent Perfect<br>
+
+  
+  <span class="underline">Stand de tir</span> : Médailles de bronze, d'argent et d'or obtenues pour toutes les armes<br>
+
+  <table>
+    <thead>
+        <tr>
+            <th>Mes records (PAL)</th>
+            <th class="bronze">Bronze</th>
+            <th class="silver">Silver</th>
+            <th class="gold">Gold</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td class="weapon">Falcon 2</td>
+            <td class="bronze">
+                2.68
+            </td>
+            <td class="silver">
+                1.04
+            </td>
+            <td class="gold">
+                4.90
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Falcon 2 (silencieux)</td>
+            <td class="bronze">
+                5.92
+            </td>
+            <td class="silver">
+                3.98
+            </td>
+            <td class="gold">
+                16.14
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Falcon 2 (scope)</td>
+            <td class="bronze">
+                2.74
+            </td>
+            <td class="silver">
+                2.94
+            </td>
+            <td class="gold">
+                1.04
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">MagSec 4</td>
+            <td class="bronze">
+                6.12
+            </td>
+            <td class="silver">
+                7.64
+            </td>
+            <td class="gold">
+                4.38
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Mauler</td>
+            <td class="bronze">
+                4.56
+            </td>
+            <td class="silver">
+                14.38
+            </td>
+            <td class="gold">
+                11.24
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Phoenix</td>
+            <td class="bronze">
+                7.16
+            </td>
+            <td class="silver">
+                18.42
+            </td>
+            <td class="gold">
+                2.62
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">DY357 Magnum</td>
+            <td class="bronze">
+                13.22
+            </td>
+            <td class="silver">
+                1.68
+            </td>
+            <td class="gold">
+                1.04
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">DY357-LX</td>
+            <td class="bronze">
+                ???
+            </td>
+            <td class="silver">
+                14.68
+            </td>
+            <td class="gold">
+                24.06
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">CMP150</td>
+            <td class="bronze">
+                4.06
+            </td>
+            <td class="silver">
+                11.14
+            </td>
+            <td class="gold">
+                9.84
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Cyclone</td>
+            <td class="bronze">
+                7.26
+            </td>
+            <td class="silver">
+                14.44
+            </td>
+            <td class="gold">
+                5.94
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Callisto NTG</td>
+            <td class="bronze">
+                5.78
+            </td>
+            <td class="silver">
+                5.66
+            </td>
+            <td class="gold">
+                7.30
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">RC-P120</td>
+            <td class="bronze">
+                5.34
+            </td>
+            <td class="silver">
+                3.34
+            </td>
+            <td class="gold">
+                4.96
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Laptop Gun</td>
+            <td class="bronze">
+                7.70
+            </td>
+            <td class="silver">
+                8.20
+            </td>
+            <td class="gold">
+                11.36
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Dragon</td>
+            <td class="bronze">
+                8.26
+            </td>
+            <td class="silver">
+                3.98
+            </td>
+            <td class="gold">
+                9.78
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">K7 Avenger</td>
+            <td class="bronze">
+                4.92
+            </td>
+            <td class="silver">
+                0.20
+            </td>
+            <td class="gold">
+                7.32
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">AR34</td>
+            <td class="bronze">
+                6.04
+            </td>
+            <td class="silver">
+                ???
+            </td>
+            <td class="gold">
+                9.46
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">SuperDragon</td>
+            <td class="bronze">
+                6.18
+            </td>
+            <td class="silver">
+                ???
+            </td>
+            <td class="gold">
+                5.70
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Fusil à pompe</td>
+            <td class="bronze">
+                2.00
+            </td>
+            <td class="silver">
+                12.74
+            </td>
+            <td class="gold">
+                3.56
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Reaper</td>
+            <td class="bronze">
+                22.28
+            </td>
+            <td class="silver">
+                14.88
+            </td>
+            <td class="gold">
+                13.48
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Fusil Sniper</td>
+            <td class="bronze">
+                5.62
+            </td>
+            <td class="silver">
+                7.82
+            </td>
+            <td class="gold">
+                7.96
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Farsight XR-20</td>
+            <td class="bronze">
+                3.68
+            </td>
+            <td class="silver">
+                4.38
+            </td>
+            <td class="gold">
+                2.14
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Devastator</td>
+            <td class="bronze">
+                2.06
+            </td>
+            <td class="silver">
+                8.62
+            </td>
+            <td class="gold">
+                5.00
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Lance-Roquettes</td>
+            <td class="bronze">
+                6.08
+            </td>
+            <td class="silver">
+                9.60
+            </td>
+            <td class="gold">
+                6.38
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Slayer</td>
+            <td class="bronze">
+                18.62
+            </td>
+            <td class="silver">
+                8.18
+            </td>
+            <td class="gold">
+                16.26
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Couteau de Combat</td>
+            <td class="bronze">
+                14.38
+            </td>
+            <td class="silver">
+                22.16
+            </td>
+            <td class="gold">
+                19.52
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Arbalète</td>
+            <td class="bronze">
+                5.28
+            </td>
+            <td class="silver">
+                ???
+            </td>
+            <td class="gold">
+                17.50
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Tranquilisant</td>
+            <td class="bronze">
+                3.14
+            </td>
+            <td class="silver">
+                9.48
+            </td>
+            <td class="gold">
+                9.82
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Laser</td>
+            <td class="bronze">
+                9.56
+            </td>
+            <td class="silver">
+                14.36
+            </td>
+            <td class="gold">
+                9.60
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Grenade</td>
+            <td class="bronze">
+                5.94
+            </td>
+            <td class="silver">
+                11.72
+            </td>
+            <td class="gold">
+                21.50
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Mine à retardement</td>
+            <td class="bronze">
+                4.00
+            </td>
+            <td class="silver">
+                4.28
+            </td>
+            <td class="gold">
+                4.38
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Mine de proximité</td>
+            <td class="bronze">
+                4.02
+            </td>
+            <td class="silver">
+                4.44
+            </td>
+            <td class="gold">
+                6.60
+            </td>
+        </tr>
+
+        <tr>
+            <td class="weapon">Mine télécommandée</td>
+            <td class="bronze">
+                0.44
+            </td>
+            <td class="silver">
+                2.52
+            </td>
+            <td class="gold">
+                1.66
+            </td>
+        </tr>
+    </tbody>
+
+  </table>
+  
+  <br>
+  <span class="underline">Multiplayer</span> : Mon grade est perfect : 1<br>
+  <span class="underline">Challenges</span> : 
+  <ul>
+	<li>Tous finis (1 à 30) à 1 joueur</li>
+	<li>30/30 challenges 2 joueurs, 30/30 challenges 3 joueurs et 29/30 challenges 4 joueurs réussis en ne jouant qu'à 2</li>
+  </ul>
+  
+  Triches obtenues : 43/43<br>
+  <br>
+
+
+  <h4 class="game-title">Pokemon Puzzle League (NSO)</h4>
+  <u>1P Stadium</u> : Fini en <i>Hard</i> et <i>Very Hard</i><br>
+  <u>Puzzle University</u> : tous puzzles de classe A finis<br><br>
+
+  <h4 class="game-title">Super Mario 64</h4>
+  FINI avec 120/120 étoiles<br>
+  Record speedrun (16 stars) : 35m27s (PAL)<br><br>
+
+  <h4 class="game-title">The Legend of Zelda : the Ocarina of Time</h4>
+  FINI avec 20/20 coeurs, tous les objets et 83/100 skultullas<br>
+  Record nombre de morts : 0<br><br>
+
+  <h4 class="game-title">The Legend of Zelda : Majora's Mask</h4>
+  FINI avec 19/20 coeurs et 23/24 masques <!-- manque (peut-être) le masque de puissance des fées car il n'est pas dans mon inventaire --><br><br>
+  <!-- Records mini-jeux :
+	Town Archery : 50 ( WR )
+	Swamp Archery : 2450
+	Horseback Archery : 35'16
+	Witch Archery : 45
+	Goron Race : 1'20'78 PAL ( 1'07'31 NTSC )
+	Gorman Track : 0'58'57 PAL
+	Ghotst Killing : 1'24'56
+	Island Jumping : 36
+	Treasure Chest Game : 0'35'26
+	Deku Scrub Games : 0'52'63 + 0'43'86 + 0'46'33 = 2'23'82
+	Honey and Darling Games : 0'25'60 + 0'36'78 + 0'42'52 = 1'44'90
+	Beaver Racing : 0'14'57 + 0'07'68 = 22'25 -->
+
+  <h4 class="game-title">Wave Race 64</h4>
+  <u>Championship</u> : Fini en <i>Normal</i>, <i>Hard</i>, <i>Expert</i> et <i>Reverse</i><br><br>
+  
+</div>
+
+
+
+<div id="N64DD" class="console-container">
+
+  <h2 class="console-title">Nintendo 64 DD</h2>
+  <h4 class="game-title">F-Zero X Expansion Kit</h4>
+  <u>GP Race</u> : 2/2 coupes finies en <i>Novice</i>, <i>Standard</i>, <i>Expert</i> et <i>Master</i><br><br>
+  
+</div>
+
+
+
+<div id="DC" class="console-container">
+
+  <h2 class="console-title">Dreamcast</h2>
+
+  <h4 class="game-title">Dead or Alive 2</h4>
+  <u>Story</u> : Fini en <i>Normal</i> (avec Ein)<br><br>
+
+  <h4 class="game-title">Dynamite Cop</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Sonic Adventure</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Virtua Tennis</h4>
+  <u>Arcade</u> : Fini en <i>Normal</i> et <i>Hard</i><br><br>
+  
+</div>
+
+
+
+<div id="PS2" class="console-container">
+  <h2 class="console-title">PlayStation 2</h2>
+
+  <h4 class="game-title">Burnout Revenge</h4>
+  FINI à 100% avec 18/24 Takedown signatures<br><br>
+
+  <h4 class="game-title">Deus Ex</h4>
+  FINI en <i>Difficile</i> et en <i>Réaliste</i><br><br>
+
+  <h4 class="game-title">Devil May Cry</h4>
+  FINI en <i>Normal</i> et <i>Hard</i><br><br>
+  <!-- Mission 5-8-9 et 13 finies en Hard avec rang S -->
+
+  <h4 class="game-title">God of War</h4>
+  FINI en <i>Héros (Normal)</i>, <i>Spartiate (Difficile)</i> et <i>Divinité (Très Difficile)</i><br>
+  Toutes les magies/armes/upgrades (en <i>Spartiate)</i><br>
+  <u>Trésors - Défi des dieux</u> : Fini<br><br>
+
+  <h4 class="game-title">God of War II</h4>
+  FINI en <i>Spartiate (Normal)</i> et <i>Titan (Très Difficile)</i><br>
+  Partie bonus <i>Titan</i> finie avec 999 999 orbes rouges<br>
+  Toutes les urnes (6/6) et tous les costumes (7/7) débloqués<br>
+  <u>Trésors - Défi des titans </u> : Fini avec rang Titan (5 rangs Titan, 2 rangs Dieu)<br><br>
+
+  <h4 class="game-title">Gran Turismo 3 : A-Spec</h4>
+  FINI à 100%<br><br>
+  <u>Mode Gran Turismo - Épreuves de permis</u> : 47/48 médailles d'or (PAL)<br>
+  
+   <table>
+    <tr>
+      <th>Mes records (PAL)</th>
+	  <th>Médaille d'or</th>
+      <th>Mon Temps</th>
+    </tr>
+
+	<!-- 12 janvier 2026 : tous les records en permis vérifiés sur ma save, tout est OK ! -->
+
+    <tr><td><i>B1</i></td> <td>0m35s100</td> <td class="green">0m34s808</td></tr>
+    <tr><td><i>B2</i></td> <td>0m25s200</td> <td class="green">0m24s951</td></tr>
+    <tr><td><i>B3</i></td> <td>0m31s100</td> <td class="green">0m30s868</td></tr>
+    <tr><td><i>B4</i></td> <td>0m29s100</td> <td class="green">0m28s705</td></tr>
+    <tr><td><i>B5</i></td> <td>0m34s400</td> <td class="green">0m34s224</td></tr>
+    <tr><td><i>B6</i></td> <td>0m33s000</td> <td class="green">0m32s509</td></tr>
+	<tr><td><i>B7</i></td> <td>0m33s000</td> <td class="green">0m32s745</td></tr>
+    <tr><td><i>B8</i></td> <td>0m42s800</td> <td class="green">0m42s576</td></tr>
+	
+    <tr><td><i>A1</i></td> <td>0m32s600</td> <td class="green">0m32s290</td></tr>
+    <tr><td><i>A2</i></td> <td>0m26s000</td> <td class="green">0m25s733</td></tr>
+    <tr><td><i>A3</i></td> <td>0m29s800</td> <td class="green">0m29s552</td></tr>
+    <tr><td><i>A4</i></td> <td>0m43s200</td> <td class="green">0m42s254</td></tr>
+    <tr><td><i>A5</i></td> <td>0m55s800</td> <td class="green">0m54s854</td></tr>
+    <tr><td><i>A6</i></td> <td>0m27s000</td> <td class="green">0m26s786</td></tr>
+	<tr><td><i>A7</i></td> <td>0m14s200</td> <td class="green">0m14s172</td></tr>
+    <tr><td><i>A8</i></td> <td>0m15s400</td> <td class="green">0m15s311</td></tr>
+
+    <tr><td><i>IB1</i></td> <td>0m48s700</td> <td class="green">0m47s828</td></tr>
+    <tr><td><i>IB2</i></td> <td>1m01s600</td> <td class="green">1m00s347</td></tr>
+    <tr><td><i>IB3</i></td> <td>0m22s400</td> <td class="green">0m22s190</td></tr>
+    <tr><td><i>IB4</i></td> <td>0m19s700</td> <td class="green">0m19s528</td></tr>
+    <tr><td><i>IB5</i></td> <td>0m28s700</td> <td class="green">0m28s099</td></tr>
+    <tr><td><i>IB6</i></td> <td>0m24s000</td> <td class="green">0m23s781</td></tr>
+	<tr><td><i>IB7</i></td> <td>0m24s000</td> <td class="green">0m23s649</td></tr>
+    <tr><td><i>IB8</i></td> <td>0m31s700</td> <td class="green">0m31s455</td></tr>
+	
+    <tr><td><i>IA1</i></td> <td>0m39s500</td> <td class="green">0m39s318</td></tr>
+    <tr><td><i>IA2</i></td> <td>0m15s670</td> <td class="green">0m15s594</td></tr>
+    <tr><td><i>IA3</i></td> <td>0m23s400</td> <td class="green">0m23s144</td></tr>
+    <tr><td><i>IA4</i></td> <td>0m32s200</td> <td class="green">0m31s879</td></tr>
+    <tr><td><i>IA5</i></td> <td>0m22s900</td> <td class="green">0m22s719</td></tr>
+    <tr><td><i>IA6</i></td> <td>0m20s100</td> <td class="green">0m19s956</td></tr>
+	<tr><td><i>IA7</i></td> <td>0m46s000</td> <td class="green">0m45s365</td></tr>
+    <tr><td><i>IA8</i></td> <td>1m07s500</td> <td class="green">1m06s673</td></tr>
+
+    <tr><td><i>S1</i></td> <td>1m40s000</td> <td class="green">1m38s974</td></tr>
+    <tr><td><i>S2</i></td> <td>1m30s000</td> <td class="green">1m29s929</td></tr>
+    <tr><td><i>S3</i></td> <td>1m52s200</td> <td class="green">1m51s887</td></tr>
+    <tr><td><i>S4</i></td> <td>1m11s000</td> <td class="green">1m10s666</td></tr>
+    <tr><td><i>S5</i></td> <td>1m58s900</td> <td class="green">1m58s264</td></tr>
+    <tr><td><i>S6</i></td> <td>1m16s800</td> <td class="green">1m16s769</td></tr>
+	<tr><td><i>S7</i></td> <td>2m09s300</td> <td class="green">2m08s820</td></tr>
+    <tr><td><i>S8</i></td> <td>1m27s800</td> <td class="red">1m27s944</td></tr>
+	
+    <tr><td><i>R1</i></td> <td>0m15s500</td> <td class="green">0m15s430</td></tr>
+    <tr><td><i>R2</i></td> <td>0m29s000</td> <td class="green">0m28s627</td></tr>
+    <tr><td><i>R3</i></td> <td>0m22s100</td> <td class="green">0m21s933</td></tr>
+    <tr><td><i>R4</i></td> <td>0m22s300</td> <td class="green">0m22s229</td></tr>
+    <tr><td><i>R5</i></td> <td>0m26s850</td> <td class="green">0m26s493</td></tr>
+    <tr><td><i>R6</i></td> <td>0m29s700</td> <td class="green">0m29s608</td></tr>
+	<tr><td><i>R7</i></td> <td>0m22s600</td> <td class="green">0m22s428</td></tr>
+    <tr><td><i>R8</i></td> <td>2m00s000</td> <td class="green">1m59s500</td></tr>
+
+  </table>
+
+  <h4 class="game-title">Gran Turismo 4 Prologue</h4>
+  <u>Mode entraînement</u> : Fini avec 46/46 médailles d'or et 8111 pts<br><br>
+  
+  <h4 class="game-title">Gran Turismo 4</h4>
+  <u>Mode Gran Turismo - Centre de permis</u> : 80/80 médailles d'or remportées <!--(B1 à S16) --> + 5/5 pauses café en or<br><br>
+
+  <h4 class="game-title">Gran Turismo Concept 2002 Tokyo-Geneva</h4>
+  FINI à 100%<br><br>
+
+  <h4 class="game-title">Grand Theft Auto: Vice City</h4>
+  FINI à 90%<br>
+  34/36 sauts uniques accomplis<br><br>
+
+  <h4 class="game-title">Medal of Honor : En première ligne</h4>
+  FINI en Facile avec 17/19 médailles d'or <!-- (manquent 2-4 et 6-3)--> <br>
+  12/19 médailles d'or en moyen <!-- (manquent 1-1, 2-4 puis 5-3 à 6-4)--> <br><br>
+
+  <h4 class="game-title">Metal Gear Solid 2 : Sons of Liberty</h4>
+  FINI en <i>Very Easy</i>, <i>Easy</i>, <i>Normal</i>, <i>Hard</i>, <i>Extreme</i> et <i>European Extreme</i><br>
+  100% des Dog Tags dans toutes les difficultés<br><br>
+  
+  <!-- Code European Extreme : QGUO HTNC BNBV EWCU MDJJ ZQQB WA -->
+  <!-- ID mgs00094ddf, pass ovu4ivl7, mgs2 ?-->
+
+  <h4 class="game-title">Metal Gear Solid 2 : Substance</h4>
+  <u>Missions</u> : 511/511 missions réussies avec 511/511 highscores<br>
+  <u>Snake Tales</u> : Tous finis (5/5)<br>
+  <u>Skateboarding</u> : Fini avec Snake (rang A) et Raiden (rang A)<br>
+  <u>Battle Boss</u> : Fini en <i>Easy</i> et <i>Normal</i> avec Raiden<br><br>
+
+  <h4 class="game-title">Metal Gear Solid 3 : Snake Eater</h4>
+  FINI en <i>Very Easy</i>, <i>Easy</i>, <i>Normal</i>, <i>Hard</i>, <i>Extreme</i> et <i>European Extreme</i><br>
+  Record speedrun : 1h52m42s en <i>Normal</i> sans special items<br> 
+  <!-- Save 1 40m20 The End / Save 2 52m15 Groznyj Grad Aile Est / Save 3 : 1h30m25 Zaozyorje / End : 1h52m42 (1h53m01) -->
+  <!-- Fini 5 fois en normal avec les rangs ???, Chameleon, Markhor (avec Tsuchinoko, 3 serpents blancs mais sans nid de the pain, 48 animaux/plantes capturés), Kerotan et Bat-->
+  <u>Duel</u> : Fini en <i>Normal</i><br><br>
+  
+  <h4 class="game-title">Metal Gear Solid 3 Subsistence</h4>
+  <u>Metal Gear (MSX)</u> : FINI<br><br>
+
+  <h4 class="game-title">Okami</h4>
+  FINI<br><br>
+
+  <h4 class="game-title">Shadow of the Colossus</h4>
+  FINI en <i>Normal</i> et en <i>Hard</i><br><br>
+
+<h4 class="game-title">Tekken 4</h4>
+  <u>Story Battle</u> : FINI en <i>Medium</i> avec Hwoarang, Jin, King, Nina, Lei, Bryan, Julia, Panda, Heihachi et Yoshimitsu<br><br>
+
+  <h4 class="game-title">Tekken 5</h4>
+  <u>Story Battle</u> : FINI en <i>Medium</i> avec Marduk, Lei, King, Feng, Hwoarang et Bryan<br><br>
+
+  <h4 class="game-title">TimeSplitters 2</h4>
+  FINI à 100%<br>
+  <span class="underline">Histoire</span> : Fini en <i>Facile</i>, <i>Moyen</i> et <i>Difficile</i><br>
+  <!-- Temps en story (RTA) : Station spatiale easy/medium/hard : 3m48/3m59/4m14 ; Chicago Easy 2m30 ; Sibérie Easy 2m18 -->
+  <span class="underline">Co-opération</span> : Fini en <i>Facile</i>, <i>Moyen</i> et <i>Difficile</i><br>
+  <span class="underline">Défis - Ligues Arcade</span> : 66/66 finis, 65 médailles de platine et une médaille d'or<br>
+  55/58 récompenses<br> <!-- Manquent Unlucky to lose, victim et marksmanship "https://timesplitters.fandom.com/wiki/Arcade_Awards" -->
+  <!-- Mes scores en Défis - Ligues Arcade et Mini-jeux :-->
+  <!-- <a href="http://www.ngc-elites.net/ts2/members.php?id=139">Cliquez ici !</a> -->
+  
+  <table>
+    <tr>
+		<td colspan="4"  class="cell-merge">Défis (Challenges)</td>
+	</tr>
+	<tr>
+      <th>Série</th>
+      <th>Niveau</th>
+	  <th>(Level)</th>
+      <th>Score</th>
+    </tr>
+    <tr>
+	  <td rowspan="3">Bris de verre</td>
+      <td>Détente russe</td>
+	  <td>Pane in the neck</td>
+      <td>7.2 sec</td>
+	</tr>
+	<tr>
+      <td>Casseur</td>
+	  <td>Bricking It</td>
+      <td>19.6 sec</td>
+	</tr>
+	<tr>
+      <td>Sept ans de malheur</td>
+	  <td>Stain Removal</td>
+      <td>40.7 sec (32 vitres)</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">Etêter les morts-vivants</td>
+      <td>Mortelle randonnée</td>
+	  <td>Fight Off the Living Dead</td>
+      <td>279 000</td>
+	</tr>
+	<tr>
+      <td>Sergio a le feu</td>
+	  <td>Sergio's Last Stand</td>
+      <td>170 450</td>
+	</tr>
+	<tr>
+      <td>Le jour des damnés</td>
+	  <td>Day of the Damned</td>
+      <td>34 300</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">Infiltration</td>
+      <td>Silencieux mais fatal</td>
+	  <td>Silent But Deadly</td>
+      <td>38.0 sec (1000)</td>
+	</tr>
+	<tr>
+      <td>Barouf sur les quais</td>
+	  <td>Trouble at the Docks</td>
+      <td>15.7 sec (1000)</td>
+	</tr>
+	<tr>
+      <td>Permission de minuit</td>
+	  <td>Escape from Neotokyo</td>
+      <td>16.0 sec (1000)</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">Crise bananière</td>
+      <td>Adieu les bananes</td>
+	  <td>Gone Bananas</td>
+      <td>42.6 sec</td>
+	</tr>
+	<tr>
+      <td>Singeries</td>
+	  <td>Monkey Business</td>
+      <td>44.0 sec</td>
+	</tr>
+	<tr>
+      <td>Jouer avec le feu</td>
+	  <td>Playing With Fire</td>
+      <td>24 bananes</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">L'assaut des figurines en carton</td>
+      <td>Papier mâché</td>
+	  <td>Take 'em Down</td>
+      <td>4 300</td>
+	</tr>
+	<tr>
+      <td>Fuite en La mineur</td>
+	  <td>Fallout</td>
+      <td>1 700</td>
+	</tr>
+	<tr>
+      <td>Choisis ton flingue</td>
+	  <td>Pick Yer Piece</td>
+      <td>1 700</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">TimeSplitters classique</td>
+      <td>Marche ou crève</td>
+	  <td>Badass Buspass Impasse</td>
+      <td>39.7 sec</td>
+	</tr>
+	<tr>
+      <td>Décharge thérapeutique</td>
+	  <td>But Where do the Batteries Go?</td>
+      <td>2 min 3.2 sec</td>
+	</tr>
+	<tr>
+      <td>La morgue vous guette</td>
+	  <td>Hit Me Baby One Morgue Time</td>
+      <td>53.1 sec</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">Faire le singe</td>
+      <td>Débâcle simiesque</td>
+	  <td>Simian Shootout</td>
+      <td>6 125</td>
+	</tr>
+	<tr>
+      <td>Chaos des singes</td>
+	  <td>Monkey Mayhem</td>
+      <td>5 600</td>
+	</tr>
+	<tr>
+      <td>Tir de barrage</td>
+	  <td>Dam Bursters</td>
+      <td>9 850</td>
+	</tr>
+    <tr>
+		<td colspan="4"  class="cell-merge">Ligue Arcade - Amateur</td>
+	</tr>
+	<tr>
+      <th>Série</th>
+      <th>Niveau</th>
+	  <th>(Level)</th>
+      <th>Score</th>
+    </tr>
+    <tr>
+	  <td rowspan="3">Série Néophyte</td>
+      <td>Adios amigos !</td>
+	  <td>Adios Amigos!</td>
+      <td>29.2 sec (10 vict)</td>
+	</tr>
+	<tr>
+      <td>Pertes</td>
+	  <td>Casualty</td>
+      <td>53.3 sec (15 vict)</td>
+	</tr>
+	<tr>
+      <td>Meilleur tir</td>
+	  <td>Top Shot</td>
+      <td>1 min 12.9 sec (6 vies)</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">Duel</td>
+      <td>Intrus indésirable</td>
+	  <td>Chastity Chased</td>
+      <td>58.7 sec (10 vict)</td>
+	</tr>
+	<tr>
+      <td>Perdu dans le grand Nord</td>
+	  <td>Shrinking from the Cold</td>
+      <td>40.9 sec (10 vict)</td>
+	</tr>
+	<tr>
+      <td>Bout de métal</td>
+	  <td>Scrap Metal</td>
+      <td>1 min 3.3 sec (10)</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">Série Roquette</td>
+      <td>Ronde de nuit </td>
+	  <td>Night Shift</td>
+      <td>61 vict (1er)</td>
+	</tr>
+	<tr>
+      <td>Prise de guerre </td>
+	  <td>Spoils of War</td>
+      <td>1 min 40.0 sec (25)</td>
+	</tr>
+	<tr>
+      <td>Démolition</td>
+	  <td>Demolition Derby</td>
+      <td>55 vict (1er)</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">Trop dur</td>
+      <td>Immolation de primates</td>
+	  <td>Monkey Immolation</td>
+      <td>3 min 0.0 sec</td>
+	</tr>
+	<tr>
+      <td>Club Inferno</td>
+	  <td>Disco Inferno</td>
+      <td>3 min 0.0 sec</td>
+	</tr>
+	<tr>
+      <td>Service des grands brûlés</td>
+	  <td>Burns Department</td>
+      <td>3 min 0.0 sec</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">Série Névrose</td>
+      <td>C'est ma tournée ! </td>
+	  <td>Club Soda</td>
+      <td>1 min 23.7 sec (20 vict)</td>
+	</tr>
+	<tr>
+      <td>Assaut stationnaire</td>
+	  <td>Station Stand</td>
+      <td>2 min 50.7 sec (1010)</td>
+	</tr>
+	<tr>
+      <td>Les hommes en gris</td>
+	  <td>Men in Gray</td>
+      <td>42.4 sec</td>
+	</tr>
+    <tr>
+		<td colspan="4"  class="cell-merge">Ligue Arcade - Classique</td>
+	</tr>
+	<tr>
+      <th>Série</th>
+      <th>Niveau</th>
+	  <th>(Level)</th>
+      <th>Score</th>
+    </tr>
+    <tr>
+	  <td rowspan="3">Maximus</td>
+      <td>Rigidité Cadavérique</td>
+	  <td>Cold Corpse Caper</td>
+      <td>64 vict (1er)</td>
+	</tr>
+	<tr>
+      <td>Reine tueuse</td>
+	  <td>Killer Queen</td>
+      <td>1 min 8.8 sec (15 vict)</td>
+	</tr>
+	<tr>
+      <td>Beta R-109</td>
+	  <td>R109 Beta</td>
+      <td>47 vict (1er)</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">Série Elimination</td>
+      <td>Durs à cuire</td>
+	  <td>Baking for the Taking</td>
+      <td>???</td> <!-- Temps enregistré 1 min 29.3 sec (6 vies), temps non enregistré : 1m05.4 -->
+	</tr>
+	<tr>
+      <td>Remonter les bretelles</td>
+	  <td>Brace Yourself</td>
+      <td>1 min 10.1 sec (7 vies)</td>
+	</tr>
+	<tr>
+      <td>L'Académie des étoiles</td>
+	  <td>Starship Whoopers</td>
+      <td>36 vict (1er)</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">Barbecue</td>
+      <td>Chaud devant !</td>
+	  <td>Chinese Burns</td>
+      <td>43.7 sec (20 vict)</td>
+	</tr>
+	<tr>
+      <td>Omelette norvégienne</td>
+	  <td>Snow Business</td>
+      <td>36.9 sec (20 vict)</td>
+	</tr>
+	<tr>
+      <td>La parade des roquettes</td>
+	  <td>Rocket Man</td>
+      <td>57.5 sec (40 vict)</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">Parasites</td>
+      <td>Il faut que quelqu'un paie ...</td>
+	  <td>Someone Has Got to Pay...</td>
+      <td>96 vict</td>
+	</tr>
+	<tr>
+      <td>Prends ça</td>
+	  <td>Time to Split</td>
+      <td>1 min 2.8 sec (15 vict)</td>
+	</tr>
+	<tr>
+      <td>Insomnie</td>
+	  <td>Can't Handle This</td>
+      <td>1 min 33.9 sec (40 vict)</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">Série Démence</td>
+      <td>Pirater un pirate</td>
+	  <td>Hack a Hacker</td>
+      <td>44.1 sec (20 vict)</td>
+	</tr>
+	<tr>
+      <td>Galettes de riz</td>
+	  <td>Rice Cracker Rush</td>
+      <td>2 min 34.9 sec (5)</td>
+	</tr>
+	<tr>
+      <td>Panne d'essence</td>
+	  <td>Superfly Lady</td>
+      <td>44.6 sec</td>
+	</tr>
+    <tr>
+		<td colspan="4"  class="cell-merge">Ligue Arcade - Élite</td>
+	</tr>
+	<tr>
+      <th>Série</th>
+      <th>Niveau</th>
+	  <th>(Level)</th>
+      <th>Score</th>
+    </tr>
+    <tr>
+	  <td rowspan="3">Série Psychose</td>
+      <td>Filles des bois</td>
+	  <td>Babes in the Woods</td>
+      <td>46 vict (1er)</td>
+	</tr>
+	<tr>
+      <td>Double facture</td>
+	  <td>Double Bill</td>
+      <td>1 min 23.6 sec (20)</td>
+	</tr>
+	<tr>
+      <td>La soupe aux briques</td>
+	  <td>Nickki Jinki Bricky</td>
+      <td>1 min 12.0 sec (20)</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">Série Duel</td>
+      <td>Si moi, je suis moche, toi, tu exhales !</td>
+	  <td>If I'm Ugly - You Smell!</td>
+      <td>47.8 sec (5 vies)</td>
+	</tr>
+	<tr>
+      <td>Au boulot !</td>
+	  <td>Golem Guru</td>
+      <td>1 min 0.9 sec (5 vies)</td>
+	</tr>
+	<tr>
+      <td>Ma meilleure amie</td>
+	  <td>Golden Thighs</td>
+      <td>34.0 sec (5 vict)</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">Série Chimère</td>
+      <td>Haro au hangar !</td>
+	  <td>Hangar Hat's Off!</td>
+      <td>1 min 12.4 sec (30 vict)</td>
+	</tr>
+	<tr>
+      <td>Est-ce qu'on ne pourrait pas..</td>
+	  <td>Can't Please Everyone...</td>
+      <td>2 min 25.6 sec (800)</td>
+	</tr>
+	<tr>
+      <td>Explosion</td>
+	  <td>Big Top Blowout</td>
+      <td>51 vict (1er)</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">Série Frénésie</td>
+      <td>Sacs en folie</td>
+	  <td>Bags of Fun</td>
+      <td>13 sacs</td>
+	</tr>
+	<tr>
+      <td>Quel cirque !</td>
+	  <td>They're Not Pets!</td>
+      <td>74 vict (1er)</td>
+	</tr>
+	<tr>
+      <td>Un mauvais coton</td>
+	  <td>Nice Threads</td>
+      <td>52.2 sec</td>
+	</tr>
+	<tr>
+	  <td rowspan="3">Série Incartade</td>
+      <td>La Chasse aux dinosaures</td>
+	  <td>Aztec the Dino Hunter</td>
+      <td>112 vict</td>
+	</tr>
+	<tr>
+      <td>Science critique</td>
+	  <td>Half Death</td>
+      <td>1 min 20.0 sec (20 vict)</td>
+	</tr>
+	<tr>
+      <td>Loterie virale</td>
+	  <td>Dead Fraction</td>
+      <td>1 min 3.8 sec (20 vict)</td>
+	</tr>
+	<td colspan="4"  class="cell-merge">Jeux old-school</td>
+	</tr>
+	<tr>
+      <th>Série</th>
+      <th>Niveau</th>
+	  <th>(Level)</th>
+      <th>Score</th>
+    </tr>
+    <tr>
+	  <td rowspan="5">Jeux old-school</td>
+      <td>Anaconda</td>
+	  <td>Anaconda</td>
+      <td>14 690</td>
+	</tr>
+	<tr>
+      <td>Astrolunaire - Facile</td>
+	  <td>Astrolander - Easy</td>
+      <td>259 027</td>
+	</tr>
+	<tr>
+      <td>Astrolunaire - Moyen</td>
+	  <td>Astrolander - Medium</td>
+      <td>231 145</td>
+	</tr>
+	<tr>
+      <td>Astrolunaire - Difficile</td>
+	  <td>Astrolander - Hard</td>
+      <td>201 074</td>
+	</tr>
+	<tr>
+      <td>Retroracer</td>
+	  <td>Retroracer</td>
+      <td>0:59.50</td>
+	</tr>
+  </table>
+  
+  <br>
+
+  <h4 class="game-title">TimeSplitters : Future Perfect</h4>
+  FINI à 100%<br>
+  <u>Histoire</u> : Fini en <i>Difficile</i><br>
+  <u>Défis et Ligues Arcade</u> : 48/48 médailles de platine<br>
+  37/59 distinctions arcade<br><br>
+
+  <h4 class="game-title">Virtua Tennis 2</h4>
+  <u>Tournament</u> : 
+	<ul>
+		<li>Fini en <i>Easy</i>, <i>Normal</i>, <i>Hard</i> et <i>Very Hard</i></li>
+		<li>King battu en <i>Easy</i></li>
+	</ul>
+  <u>World Tour</u> : Fini et stats à fond pour le perso masculin<br><br>
+
+  <h4 class="game-title">World Rally Championship</h4>
+  <u>Championnat</u> : Remporté en <i>Normal</i> et <i>Professionnel</i><br><br>
+
+  <h4 class="game-title">WRC 4</h4>
+  <u>Championnat</u> : Remporté en <i>WRC Professionnel</i><br><br>
+
+</div>
+
+
+
+
+<div id="NGC" class="console-container">
+
+  <h2 class="console-title">Gamecube</h2>
+
+  <h4 class="game-title">Baten Kaitos</h4>
+  FINI avec 825/1022 Magnus<br><br>
+
+  <h4 class="game-title">Donkey Kong Jungle Beat</h4>
+  FINI avec les deux fins<br>
+  18/18 médailles de platine<br><br>
+
+  <h4 class="game-title">F-Zero GX</h4>
+  TOUT CE QUI SUIT A ÉTÉ FAIT SANS DAKOU NI SPACEFLYING<br><br>
+
+  <span class="underline">Story</span> : <br>
+  Fini en <i>Normal</i>, <i>Hard</i> et <i>Very Hard</i><br>
+  
+  <table>
+    <tr>
+      <th>Mes records</th>
+      <th>Mission 1</th>
+      <th>Mission 2</th>
+      <th>Mission 3</th>
+	  <th>Mission 4</th>
+      <th>Mission 5</th>
+      <th>Mission 6</th>
+	  <th>Mission 7</th>
+      <th>Mission 8</th>
+      <th>Mission 9</th>
+    </tr>
+    <tr>
+		<td><i>Normal</i></td>
+		<td>0m51s706</td>
+		<td>1m10s929</td>
+		<td>1m22s892</td>
+		<td>1m55s442</td>
+		<td>0m37s575</td>
+		<td>2m32s642</td>
+		<td>1m39s774</td>
+		<td>1m59s371</td>
+		<td>2m14s230</td>
+	</tr>
+    <tr>
+		<td><i>Hard</i></td>
+		<td>0m54s457</td>
+		<td>1m11s073</td>
+		<td>1m23s528</td>
+		<td>1m54s155</td>
+		<td>0m38s020</td>
+		<td>2m33s156</td>
+		<td>2m12s307</td>
+		<td>2m38s739</td>
+		<td>2m14s979</td>
+	</tr>
+    <tr>
+		<td><i>Very Hard</i></td>
+		<td>0m59s496</td>
+		<td>1m12s283</td>
+		<td>1m22s349</td>
+		<td>1m58s365</td>
+		<td>0m38s863</td>
+		<td>2m33s084</td>
+		<td>2m47s208</td>
+		<td>3m16s098</td>
+		<td>2m14s648</td>
+	</tr>
+
+  </table>
+  
+  <br>
+
+  <span class="underline">Grand Prix</span> : 
+  <ul>
+	<li>Toutes les coupes (5/5) finies en <i>Novice</i>, <i>Standard</i>, <i>Expert</i> et <i>Master</i></li>
+	<li>41/41 vidéos de fin débloquées</li>
+  </ul>
+
+  <span class="underline">Time Attack</span> :<br>
+  26/26 Staff Ghosts débloqués et battus, dont 25/26 battus sans vaisseau custom (manque Cylinder Knot) et 23/26 à vaisseau égal (manquent Cylinder Knot, Drift Highway et Meteor Stream)<br>
+  
+  
+  <table>
+    <tr>
+	  <th>Mes records (maxspeed settings)</th>
+      <th>Track</th>
+	  <th>Best Time</th>
+      <th>Car used</th>
+      <th>Best Lap</th>
+      <th>Car used</th>
+	  <th>Maxspeed</th>
+      <th>Car used</th>
+    </tr>
+    <tr>
+	  <td rowspan="5">Ruby Cup</td>
+      <td>Mute City - Twist Road</td>
+	  <td>0'55"308</td>
+      <td>Quick Cannon-G4</td>
+      <td>0'15"095</td>
+      <td>Quick Cannon-G4</td>
+	  <td>3822</td>
+      <td>???</td>
+	</tr>
+    <tr>
+      <td>Casino Palace - Split Oval</td>
+	  <td>0'49"185</td>
+      <td>Fat Shark</td>
+      <td>0'15"028 </td>
+      <td>Fat Shark</td>
+	  <td>2970</td>
+      <td>Fat Shark</td>
+	</tr>
+    <tr>
+      <td>Sand Ocean - Surface Slide</td>
+	  <td>1'45"317</td>
+      <td>Quick Cannon-G4</td>
+      <td>0'31"415</td>
+      <td>Quick Cannon-G4</td>
+	  <td>3086</td>
+      <td>Quick Cannon-G4</td>
+	</tr>
+    <tr>
+      <td>Lightning - Loop Cross</td>
+	  <td>1'45"627</td>
+      <td>Quick Cannon-G4</td>
+      <td>0'31"742</td>
+      <td>Quick Cannon-G4</td>
+	  <td>3263</td>
+      <td>Quick Cannon-G4</td>
+	</tr>
+    <tr>
+      <td>Aeropolis - Multiplex</td>
+	  <td>1'56"694</td>
+      <td>Fat Shark</td>
+      <td>0'35"649</td>
+      <td>Combat Jaguar-Z</td>
+	  <td>3047</td>
+      <td>???</td>
+	</tr>
+    <tr>
+	  <td rowspan="5">Sapphire Cup</td>
+      <td>Big Blue - Drift Highway</td>
+	  <td>1'02"662</td>
+      <td>Acro Cannon-G4</td>
+      <td>0'18"397</td>
+      <td>Frost Cannon-G4</td>
+	  <td>3021</td>
+      <td>Quick Cannon-G4</td>
+	</tr>
+    <tr>
+      <td>Port Town - Aero Dive</td>
+	  <td>2'12"286</td>
+      <td>Fat Shark</td>
+      <td>0'41"236</td>
+      <td>Fat Shark</td>
+	  <td>3015</td>
+      <td>Quick Cannon-G4</td>
+	</tr>
+    <tr>
+      <td>Green Plant - Mobius Ring</td>
+	  <td>1'29"445</td>
+      <td>Frost Cannon-G4</td>
+      <td>0'26"174</td>
+      <td>Frost Cannon-G4</td>
+	  <td>3155</td>
+      <td>Quick Cannon-G4</td>
+	</tr>
+    <tr>
+      <td>Port Town - Long Pipe</td>
+	  <td>2'19"593</td>
+      <td>Fat Shark</td>
+      <td>0'43"802</td>
+      <td>Frost Cannon-G4</td>
+	  <td>2546</td>
+      <td>Quick Cannon-G4 ?</td>
+	</tr>
+    <tr>
+      <td>Mute City - Serial Gaps</td>
+	  <td>1'01"971</td>
+      <td>Quick Cannon-G4</td>
+      <td>0'18"687</td>
+      <td>???</td>
+	  <td>3091</td>
+      <td>Quick Cannon-G4</td>
+	</tr>
+    <tr>
+	  <td rowspan="5">Emerald Cup</td>
+      <td>Fire Field - Cylinder Knot</td>
+	  <td>2'37"069</td>
+      <td>Combat Planet-Z</td>
+      <td>0'49"537</td>
+      <td>Combat Planet-Z</td>
+	  <td>2819</td>
+      <td>Quick Cannon-G4 ?</td>
+	</tr>
+    <tr>
+      <td>Green Plant - Intersection</td>
+	  <td>2'13"559</td>
+      <td>Frost Cannon-G4</td>
+      <td>0'40"749</td>
+      <td>???</td>
+	  <td>3011</td> 
+      <td>Quick Cannon-G4</td>
+	</tr>
+    <tr>
+      <td>Casino Palace - Double Branches</td>
+	  <td>2'44"244</td>
+      <td>Frost Cannon-G4</td>
+      <td>0'50"451</td>
+      <td>Frost Cannon-G4</td>
+	  <td>2765</td>
+      <td>Quick Cannon-G4 ?</td>
+	</tr>
+    <tr>
+      <td>Lightning - Half Pipe</td>
+	  <td>2'37"980</td>
+      <td>Frost Cannon-G4</td>
+      <td>0'49"662</td>
+      <td>Frost Cannon-G4</td>
+	  <td>2411</td>
+      <td>Quick Cannon-G4 ?</td>
+	</tr>
+    <tr>
+      <td>Big Blue - Ordeal</td>
+	  <td>2'34"356</td>
+      <td>Photon Cannon-G4</td>
+      <td>0'46"511</td>
+      <td>Photon Cannon-G4</td>
+	  <td>2998</td>
+      <td>Quick Cannon-G4</td>
+	</tr>
+    <tr>
+	  <td rowspan="5">Diamond Cup</td>
+      <td>Cosmo Terminal - Trident</td>
+	  <td>2'51"332</td>
+      <td>Combat Hammer-Z</td>
+      <td>0'50"574</td>
+      <td>Frost Cannon-G4</td>
+	  <td>2966</td>
+      <td>Twin Noritta</td>
+	</tr>
+    <tr>
+      <td>Sand Ocean - Lateral Shift</td>
+	  <td>1'53"887</td>
+      <td>Acro Cannon-G4</td>
+      <td>0'34"517</td>
+      <td>Acro Cannon-G4</td>
+	  <td>3250</td>
+      <td>Quick Cannon-G4</td>
+	</tr>
+    <tr>
+      <td>Fire Field - Undulation</td>
+	  <td>1'54"237</td>
+      <td>Frost Cannon-G4</td>
+      <td>0'33"040</td>
+      <td>Acro Cannon-G4</td>
+	  <td>2781</td>
+      <td>Acro Cannon-G4</td>
+	</tr>
+    <tr>
+      <td>Aeropolis - Dragon Slope</td>
+	  <td>2'31"475</td>
+      <td>Gallant Cannon-G4</td>
+      <td>0'46"669</td>
+      <td>Gallant Cannon-G4</td>
+	  <td>4259</td> <!-- record indiqué dans mes notes et F-Zero Central mais seulement 3528 sauvegardé sur ma carte mémoire ?? pourquoi ?? -->
+	  <!-- apparemment les 10 maxspeed enregistrées dans le top 10 sont pas les 10 meilleures mais les 10 maxspeed associées à chacun des 10 meilleurs temps -->
+      <td>Twin Noritta</td>
+	</tr>
+    <tr>
+      <td>Phantom Road - Slim Line Slits</td>
+	  <td>1'51"338</td>
+      <td>Acro Cannon-G4</td>
+      <td>0'33"737</td>
+      <td>???</td>
+	  <td>2807</td>
+      <td>???</td>
+	</tr>
+    <tr>
+	  <td rowspan="6">AX Cup</td>
+      <td>Aeropolis - Screw Drive</td>
+	  <td>0'56"830</td>
+      <td>Quick Cannon-G4</td>
+      <td>0'15"041</td>
+      <td>Quick Cannon-G4</td>
+	  <td>3238</td>
+      <td>Quick Cannon-G4</td>
+	</tr>
+    <tr>
+      <td>Outer Space - Meteor Stream</td>
+	  <td>1'29"493</td>
+      <td>Frost Cannon-G4</td>
+      <td>0'26"517</td>
+      <td>Frost Cannon-G4</td>
+	  <td>3380</td>
+      <td>???</td>
+	</tr>
+    <tr>
+      <td>Port Town - Cylinder Wave</td>
+	  <td>1'52"877</td>
+      <td>Frost Cannon-G4</td>
+      <td>0'34"164</td>
+      <td>Acro Cannon-G4</td>
+	  <td>2694</td>
+      <td>Frost Cannon-G4</td>
+	</tr>
+    <tr>
+      <td>Lightning - Thunder Road</td>
+	  <td>3'00"360</td>
+      <td>Frost Cannon-G4</td>
+      <td>0'53"182</td>
+      <td>Frost Cannon-G4</td>
+	  <td>3047</td>
+      <td>Quick Cannon-G4</td>
+	</tr>
+    <tr>
+      <td>Green Plant - Spiral</td>
+	  <td>3'24"961</td>
+      <td>Photon Cannon-G4</td>
+      <td>1'01"872</td>
+      <td>Photon Cannon-G4</td>
+	  <td>3228</td>
+      <td>Quick Cannon-G4 ?</td>
+	</tr>
+    <tr>
+      <td>Mute City - Sonic Oval</td>
+	  <td>0'45"800</td>
+      <td>Quick Cannon-G4</td>
+      <td>0'12"153</td>
+      <td>Quick Cannon-G4</td>
+	  <td>3301</td>
+      <td>Tornado Wyvern-V2</td>
+	</tr>
+    
+
+  </table>
+
+  <h4 class="game-title">Ikaruga</h4>
+  FINI en <i>Easy</i> en utilisant 2 continues (et 5 vies par continu)<br><br>
+
+  <h4 class="game-title">Mario Kart : Double Dash !!</h4>
+  <u>Grand Prix</u> : Toutes les coupes (4/4) et Grand Chelem remportés en <i>50cc</i>, <i>100cc</i>, <i>150cc</i> et <i>Miroir</i><br><br>
+
+  <h4 class="game-title">Mario Power Tennis</h4>
+  <u>Tournoi (1 joueur)</u> : Tous les tournois gagnés (8/8 en simple et 8/8 en double)<br><br>
+
+  <h4 class="game-title">Metal Gear Solid : The Twin Snakes</h4>
+  FINI en <i>Very Easy</i>, <i>Easy</i>, <i>Normal</i>, <i>Hard</i> et <i>Extreme</i><br>
+  100% des dog-tags dans les 5 difficultés<br>
+  Rang Big Boss obtenu : FINI en <i>Extreme</i>, SP items off, 0 rations, 0 continues en 1h21m23s<br>
+  Record speedrun : 1h13m31s en <i>Normal</i>, SP items off<br><br>
+  <!-- http://www.konamijpn.com/mgs2/alldogtags
+  ID tts000021ac ; pass f32y3gtr63 -->
+
+  <h4 class="game-title">Metroid Prime</h4>
+  FINI en <i>Normal</i> avec 73% d'objets acquis et 96% d'objets analysés<br><br>
+
+  <h4 class="game-title">Star Wars : Rogue Squadron II - Rogue Leader</h4>
+  FINI avec 15/15 médailles d'or et 15/15 médailles Ace<br>
+  Mission d'entraînement finie aux 4 moments de la journée<br><br>
+  
+  Statistiques de mes médailles d'or :
+  
+  <table>
+    <tr>
+      <th></th>
+      <th>Mission 1</th>
+      <th>Mission 2</th>
+      <th>Mission 3</th>
+	  <th>Mission 4</th>
+      <th>Mission 5</th>
+      <th>Mission 6</th>
+	  <th>Mission 7</th>
+      <th>Mission 8</th>
+      <th>Mission 9</th>
+	  <th>Mission 10</th>
+      <th>Mission Bonus 1</th>
+      <th>Mission Bonus 2</th>
+	  <th>Mission Bonus 3</th>
+      <th>Mission Bonus 4</th>
+      <th>Mission Bonus 5</th>
+    </tr>
+    <tr>
+		<td>Durée de la mission</td>
+		<td>5m58s</td>
+		<td>3m59s</td>
+		<td>4m51s</td>
+		<td>9m00s</td>
+		<td>1m13s</td>
+		<td>9m37s</td>
+		<td>3m58s</td>
+		<td>6m36s</td>
+		<td>8m33s</td>
+		<td>4m51s</td>
+		<td>1m14s</td>
+		<td>3m55s</td>
+		<td>4m00s</td>
+		<td>4m06s</td>
+		<td>185m22s</td>
+	</tr>
+    <tr>
+		<td>Ennemis détruits</td>
+		<td>100</td>
+		<td>42</td>
+		<td>44</td>
+		<td>87</td>
+		<td>10</td>
+		<td>108</td>
+		<td>58</td>
+		<td>123</td>
+		<td>68</td>
+		<td>41</td>
+		<td>35</td>
+		<td>70</td>
+		<td>36</td>
+		<td>36</td>
+		<td>1659</td>
+	</tr>
+    <tr>
+		<td>Précision</td>
+		<td>43%</td>
+		<td>20%</td>
+		<td>60%</td>
+		<td>123%</td>
+		<td>75%</td>
+		<td>38%</td>
+		<td>76%</td>
+		<td>76%</td>
+		<td>34%</td>
+		<td>50%</td>
+		<td>17%</td>
+		<td>14%</td>
+		<td>40%</td>
+		<td>81%</td>
+		<td>13%</td>
+	</tr>
+    <tr>
+		<td>Alliés détruits</td>
+		<td>0</td>
+		<td>1</td>
+		<td>20</td>
+		<td>2</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>16</td>
+		<td>6</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>2</td>
+		<td>12</td>
+		<td>-</td> <!-- pour la mission 15, la stat alliés détruits est remplacée par la stat vagues complétées (99 pour ma médaille d'or) -->
+	</tr>
+    <tr>
+		<td>Vies perdues</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>7</td>
+	</tr>
+    <tr>
+		<td>Efficacité ordinateur visée</td>
+		<td>100%</td>
+		<td>94%</td>
+		<td>100%</td>
+		<td>100%</td>
+		<td>100%</td>
+		<td>87%</td>
+		<td>100%</td>
+		<td>85%</td>
+		<td>92%</td>
+		<td>100%</td>
+		<td>100%</td>
+		<td>100%</td>
+		<td>100%</td>
+		<td>100%</td>
+		<td>0%</td>
+	</tr>
+  </table>
+  
+  <br>
+  
+  <!-- Ordre d'obtention des médailles d'or :
+	1 : Le champ d'astéroïdes (mission 12)
+	2 : Au coeur du combat (mission 10)
+	3 : Rendez-vous avec le Razor (mission 5)
+	4 : L'académie impériale (mission 7)
+	5 : La bataille de Hoth (mission 3)
+	6 : Raid sur Bespin (mission 8)
+	7 : Les prisons de Maw (mission 4)
+	9 : Piège dans le corridor d'Ison (mission 2)
+	10 : Vengeance sur Kothlis (mission 6)
+	11 : Le vol du faucon (mission 11)
+	12 : Revanche sur Yavin (mission 14)
+	13 : L'attaque de l'étoile noire (mission 1)
+	14 : La bataille d'Endor (mission 9)
+	15 : Endurance (mission 15) -->
+	
+	<!-- Autres records :
+		Course du canyon des mendiants : Track 1 0m40s ; Track 2 0m31s
+		Course de la station Tosche : Easy 0m55s ; Hard 0m55s
+		Rats womp : 82-->
+
+  <h4 class="game-title">The Legend of Zelda : The Wind Waker</h4>
+  FINI avec :
+	<ul>
+		<li>tous les objets</li>
+		<li>tous les quarts de coeur</li>
+		<li>61/61 cartes (41 cartes au trésor + 8 cartes de la Triforce + 12 cartes spéciales)</li>
+		<li>toute la carte marine révélée</li>
+		<li>Galerie Tendo complétée avec 133/134 figurines (toutes sauf Kingle, facultative) <!-- car nécessite une GBA --></li>
+	</ul><br>
+
+  <h4 class="game-title">The Legend of Zelda : Twilight Princess</h4>
+  FINI avec 24/24 insectes, 51/60 spectes et 35/45 cinquièmes de coeur<br><br>
+  
+</div>
+
+
+
+<div id="DS" class="console-container">
+
+  <h2 class="console-title">Nintendo DS</h2>
+
+  <h4 class="game-title">Chrono Trigger</h4>
+  FINI avec la première fin<br><br>
+
+  <h4 class="game-title">Mario vs. Donkey Kong 2 : La Marche des Mini</h4>
+  FINI avec 80/80 médailles d'or<br><br>
+
+  <h4 class="game-title">Tetris DS</h4>
+  <u>Standard - VS CPU</u> : Tous niveaux (5/5) finis<br><br>
+  
+  <h4 class="game-title">The Legend of Zelda : Phantom Hourglass</h4>
+  FINI avec tous les coeurs (16/16)<br>
+  Mini-jeux/Boutiques : 999 coups à l'entraînement à l'épée, 200 points chez Terry<br><br>
+
+</div>
+
+
+
+<div id="PSP" class="console-container">
+
+  <h2 class="console-title">Playstation Portable</h2>
+
+  <h4 class="game-title">Metal Gear Acid</h4>
+  FINI en <i>Normal</i><br>
+  193/204 cartes<br><br>
+
+  <h4 class="game-title">Metal Gear Solid : Portable Ops</h4>
+  FINI en <i>Normal</i> et en <i>Extreme</i><br><br>
+
+</div>
+
+
+
+<div id="X360" class="console-container">
+
+  <h2 class="console-title">Xbox 360</h2>
+
+  <h4 class="game-title">Gears of War</h4>
+  <u>Campaign Co-Op</u> : Fini en <i>Insane</i><br><br>
+
+</div>
+
+
+
+<div id="PS3" class="console-container">
+
+  <h2 class="console-title">PlayStation 3</h2>
+
+  <h4 class="game-title">God of War III</h4>
+  FINI en <i>Dieu (Normal)</i> et en <i>Titan (Difficile)</i><br>
+  Tous les yeux de Gorgone, les plumes Phoenix et les cornes de Minotaure, tous les biens divins et les armes améliorées au max (en <i>Difficile)</i><br>
+  <u>Trésors - Défis</u> : Défi de l'Olympe terminé<br><br>
+  
+  
+  
+  <h4 class="game-title">God of War Collection</h4>
+  <u>God of War</u> : FINI avec tous les trophées<br>
+  <u>God of War II</u> : FINI avec tous les trophées<br><br>
+  
+  
+  <h4 class="game-title">Gran Turismo 5</h4>
+  FINI à 98% avec les deux fins (Trophées "Final" et "Grand final" obtenus) <!-- atteindre vidéo de fin et sa version longue--><br><br>
+  <u>Mode GT</u> : 
+	<ul>
+		<li>A-Spec : niveau 37/40</li>
+		<li>A-Spec : séries <i>Débutant</i>, <i>Amateur</i>, <i>Professionnel</i>, <i>Expert</i> et <i>Extreme</i> finies avec tout en or</li>
+		<li>A-Spec : série <i>Endurance</i> : 5/9 épreuves finies (en or)</li>
+		<li>Centre des permis : 60/60 permis en or</li>
+		<!-- <li>216 voitures premium et 785 voitures standard, mais pas toutes différentes  </li> -->
+		<li>B-Spec : niveau 40/40</li>
+	</ul>
+
+  <br>
+
+  <h4 class="game-title">Guitar Hero 3 : Legends of Rock</h4>
+  <u>Carrière</u> : 
+  <ul>
+	<li>Toutes les chansons (39/39), boss (3/3) et chansons bonus (25/25) finies en <i>Facile</i>, <i>Moyen</i> et <i>Difficile</i></li>
+	<li>39/39 chansons, 2/3 boss et 24/25 chansons bonus finies en <i>Expert</i></li>
+	<li><i>Facile</i> et <i>Moyen</i> : 64/64 chansons finies en 5 étoiles</li>
+	<li><i>Difficile</i> : 54/64 chansons finies en 5 étoiles, 6/64 chansons finies en 4 étoiles, 4/64 chansons finies en 3 étoiles</li>
+	<li><i>Expert</i> : 45/64 chansons finies en 5 étoiles, 7/64 finies en 4 étoiles et 11/64 finies en 3 étoiles</li>
+	<li><i>Expert</i> : 8/64 FC (Full Combo = Perfect)</li>
+	<li><i>Expert</i> : score carrière de 9 045 437 points</li>
+  </ul><br>
+
+  <h4 class="game-title">Guitar Hero 5</h4>
+  <u>Carrière</u> : 
+	<ul>
+		<li>Finie en <i>Expert</i> (85/85 chansons) avec 810 étoiles</li>
+		<li><i>Expert</i> : 12/85 FC</li>
+	</ul>
+  <br>
+
+  <h4 class="game-title">Guitar Hero : Warriors of Rock</h4>
+  <u>Quête</u> : Finie en <i>Expert</i> (fléau du rock battu et demi-dieu du rock libéré)<br><br>
+  <!-- Mode quête Austin le guerrier : 40 étoiles en expert sur tous sauf children of the grave (commentaire écrit sur fichier liste fc)-->
+
+  <h4 class="game-title">Mega Man 9</h4>
+  FINI avec 48% des défis accomplis<br><br>
+
+ <h4 class="game-title">Metal Gear Solid HD Collection</h4>
+ <u>Metal Gear Solid 2</u> : 
+	<ul>
+		<li>Fini (Tanker + Plant) en <i>Very Easy</i>, <i>Easy</i> et <i>Normal</i></li>
+		<li>Plant fini en <i>Hard</i> et <i>Extreme</i></li>
+		<li>Snake Tales : tous finis (5/5)</li>
+		<li>Missions : toutes finies (511/511)</li>
+	</ul>
+  <br>
+
+  <h4 class="game-title">Metal Gear Solid 4 : Guns of the Patriots</h4>
+  FINI en <i>Liquid Easy</i>, <i>Naked Normal</i>, <i>Solid Normal</i>, <i>Big Boss Hard</i> et <i>The Boss Extreme</i><br>
+  Rang Big Boss obtenu : Fini en <i>The Boss Extreme</i> en 1h41m50s<br>
+  38/40 emblèmes (tous sauf Jaguar et Leopard)<!-- a priori, en tout cas 2 manquants parmi les 3 emblèmes Jaguar/Leopard/Spider --> <br><br>
+  <!-- MGO : Konami ID : __wabs__
+  Pass : fg456tyuiv4890
+  Game ID : megawabs
+  Pass : 4890776351218
+  QS : Nom de jeune fille mère
+  RS : cest bazin
+  Nom perso : Wabs -->
+  
+  <h4 class="game-title">Metal Gear Solid V : The Phantom Pain</h4>
+  FINI à 100% avec :<br>
+  <ul>
+	<li>Toutes les missions finies avec rang S</li>
+	<li>Toutes les tâches de toutes les missions finies</li>
+	<li>Toutes opérations secondaires et toutes les missions spéciales des missions de terrain finies</li>
+	<li>Tous les noms de codes</li>
+	<li>Toutes espèces d'animaux sauvages extraites</li>
+	<li>Tous les plans, objets clés et photos souvenirs trouvés</li>
+	<li>Toutes les plateformes construites pour la mother base</li>
+  </ul>
+  <br>
+
+  <h4 class="game-title">Rock Band</h4>
+  <u>Solo - Tournée Solo</u> : 
+	<ul>
+		<li>Finie en <i>Expert</i> (67/67 chansons : 45/45 chansons de base, + 13/13 bonus + 9/9 téléchargées)</li>
+		<li><i>Expert</i> : 64/67 chansons finies en 5 étoiles (dont 49 chansons en 5 étoiles dorées), 3/67 finies en 4 étoiles <!-- (Run to the hills, Flirtin with disaster, timmy & the lords)--></li>
+		<li><i>Expert</i> : 24/67 FC</li>
+		<li>Score carrière <!-- sur les 58 chansons de base + bonus --> : 8 277 351 points</li>
+	</ul>
+  <br>
+  
+  <h4 class="game-title">Rock Band 3</h4>
+  35/92 chansons finies en <i>Expert</i> (dont 1 FC) avec 166/460 étoiles<br><br>
+
+  <h4 class="game-title">The Beatles : Rock Band</h4>
+  <u><u>Histoire</u> / <u>Partie rapide</u></u> :
+	<ul>
+		<li>Histoire finie en <i>Expert</i> avec toutes les chansons (44/44) en 5 étoiles, dont 9 chansons en 5 étoiles dorées</li>
+		<li>101/104 photos récupérées</li>
+		<li>Score guitare : 3 654 314 points</li> 
+		<!-- le score affiché en partie rapide affiche le meilleur score, qu'il soit obtenu en carrière ou en partie rapide, pareil pour les étoiles affichées en partie rapide -->
+		<li><i>Expert</i> : 8/44 Full Combo</li>
+	</ul>
+  <br>
+
+  <h4 class="game-title">Uncharted : Drake's Fortune</h4>
+  FINI en <i>Difficile</i> et en <i>Extreme</i><br>
+  1000/1000 points et 61/60 trésors (<i>Extreme</i>)<br><br>
+
+  <h4 class="game-title">Uncharted 2 : Among Thieves</h4>
+  FINI en <i>Difficile</i> et en <i>Expert</i><br>
+  100/100 trésors et la relique étrange (<i>Expert</i>)<br><br>
+  
+  <h4 class="game-title">Uncharted 3 : L'Illusion de Drake</h4>
+  FINI en <i>Normal</i> et en <i>Extreme</i><br>
+  100/100 trésors et la relique sacrée (<i>Extreme</i>)<br><br>
+
+  <h4 class="game-title">Virtua Tennis 3</h4>
+  <u>Tour Mondial</u> :
+  <ul>
+	<li>Numéro 1 mondial avec toutes statistiques à fond</li>
+	<li>École de tennis : Finie en <i>Débutant</i>, <i>Normal</i> et <i>Confirmé</i> <!-- Mais pas en Expert --> </li>
+  </ul>
+  <br>
+
+</div>
+
+
+
+<div id="SW" class="console-container">
+
+  <h2 class="console-title">Switch</h2>
+  
+  <h4 class="game-title">Celeste</h4>
+  FINI avec 199 fraises :
+  <ul>
+	<li>tous les chapitres terminés (9/9)</li>
+	<li>toutes les faces A, B et C terminées (25/25)</li>
+	<li>toutes les fraises normales (175/175)</li>
+	<li>la Moon Berry et la winged golden berry (2/2)</li>
+	<li>22/25 fraises dorées</li>
+	<li>Celeste Classic (Pico-8) fini avec toutes les fraises (18/18)</li>
+  </ul>
+  <br>
+
+  <h4 class="game-title">Donkey Kong Country : Tropical Freeze</h4>
+  FINI à 200% avec :
+  <ul>
+	<li>tous les niveaux terminés</li>
+	<li>toutes les pièces de puzzle</li>
+	<li>toutes les lettres KONG rouges</li>
+	<li>tous les niveaux terminés en difficile</li>
+	<li>toutes les lettres KONG bleues <!-- les rouges correspondent au mode normal, les bleues au mode difficile --></li>
+	<li>toutes les figurines (41/41), toutes les images (64/64), toutes les musiques (24/24) et tous les dioramas (6/6)</li>
+  </ul>
+  <br>
+  <!-- Manque : mode chrono ie médailles d'or dorées sans se faire toucher -->
+
+  <h4 class="game-title">Hades</h4>
+  FINI avec :
+  <ul>
+	<li>les trois fins (première évasion, générique de fin après 10 évasions, épilogue)</li>
+	<li>toutes les prophéties (55/55) réalisées</li>
+	<li>tous les liens forgés avec tous les persos</li>
+	<li>toutes les entrées du codex débloquées et complétées (121/121)</li>
+	<li>tous les souvenirs et compagnons upgradés au max</li>
+	<li>tous les aspects de toutes les armes upgradés au max</li>
+	<li>tous les achats du contremaître effectués</li>
+	<li>toutes les heat de 1 à 16 finies avec toutes les armes (soit 96 runs)</li>
+	<li>toutes les statues de Thados révélées (8 heat, 16 heat et 32 heat réussis)</li>
+	<!-- Manquent uniquement les grades du directeur des ressources -->
+  </ul>
+  <br>
+
+  <h4 class="game-title">Hollow Knight</h4>
+  FINI à 108% avec :
+  <ul>
+	<li>les trois premières fins (3/5) et la fin bonus</li> <!-- Fins 1-2-3 : "Hollow Knight", "Frères et soeurs scellés", "Fin des rêves" + fin bonus : "La fin d'une ère" -->
+	<li>100% du jeu de base</li>
+	<li>6% liés au DLC <i>La troupe Grimm</i></li>
+	<li>1% lié au DLC <i>Sang-de-vie</i></li>
+	<li>1% lié au DLC <i>Chercheur de dieux</i></li> <!-- Manquent tous les panthéons -->
+	<li>le journal du chasseur complété avec 156 entrées : 146/146 entrées obligatoires + 10/22 entrées facultatives</li>
+  </ul>
+  <br>
+
+  <h4 class="game-title">Inside</h4>
+  FINI avec la fin normale et la fin secrète<br><br>
+
+  <h4 class="game-title">It Takes Two</h4>
+  FINI avec 12/25 mini-jeux trouvés<br><br>
+
+  <h4 class="game-title">Joe Dever's Lone Wolf</h4>
+  FINI en <i>Normal</i> et en <i>Difficile</i><br><br>
+
+  <h4 class="game-title">Mario Kart 8 Deluxe</h4>
+  <u>Grand Prix</u> : Toutes les coupes remportées avec 3 étoiles en <i>150cc</i>, <i>200cc</i> et <i>Miroir</i> soit 72/72 coupes (DLC compris)<br>
+  <u>Contre-la-montre</u> : Tous les fantômes battus en <i>150cc</i> et <i>200cc</i>, soit 192/192 fantômes (DLC compris)<br><br>
+  
+  <h4 class="game-title">Metroid Prime Remastered</h4>
+  FINI en <i>Standard</i><br><br>
+ 
+  <h4 class="game-title">Ori and the blind forest (Definitive Edition)</h4>
+  FINI en <i>Facile</i>, en <i>Normal</i> à 100% et en <i>Difficile</i> à 100%<br>
+  Record speedrun : 2h10m43s en <i>Facile</i> (multi-segmented)<br>
+  54/57 succès<br><br>
+  
+  <h4 class="game-title">Outer Wilds</h4>
+  FINI avec journal de bord entièrement rempli, soit tous lieux et toutes les entrées hors DLC<br><br>
+  
+  <h4 class="game-title">Streets of Rage 4</h4>
+  <u>Histoire</u> : Fini en Mania+ avec tous les rangs S (pré-maj 2023)<br><!-- Rangs S perdus suite à une mise à jour -->
+  <u>Arcade</u> : Fini en Mania+ avec rang A (pré-maj 2023)<br> <!--Rang perdu également -->
+  <u>Survie</u> : Record = niveau 37<br><br>
+  
+  <h4 class="game-title">Super Mario 3D All-Stars</h4>
+  <u>Super Mario 64</u> : FINI avec 120/120 étoiles<br>
+  <u>Super Mario Sunshine</u> : FINI avec 120/120 soleils<br>
+  <u>Super Mario Galaxy</u> : FINI avec 121/121 étoiles avec Mario et avec Luigi<br><br>
+  
+  <h4 class="game-title">Super Mario Bros. 35</h4>
+  <u>Bataille à 35</u> : Top 1, avec 3446 points<br>
+  <u>Entraînement</u> : Tous niveaux débloqués et finis<br><br>
+  
+  <h4 class="game-title">Super Mario Bros. Wonder</h4>
+  FINI avec toutes les médailles (6/6) soit :
+  <ul>
+	<li>tous les niveaux (129/129)</li>
+	<li>toutes les pièces fleur (306/306)</li>
+	<li>toutes les graines prodige (225/225)</li>
+	<li>tous les panneaux (144/144)</li>
+	<li>tous les hauts de drapeau (129/129)</li>
+	<li>tous les badges (24/24)</li>
+  </ul>
+  <br>
+
+  <h4 class="game-title">Super Mario Maker 2</h4>
+  <u>Mode histoire</u> : Fini à 100%
+  <br><br>
+  
+  <h4 class="game-title">Super Mario Odyssey</h4>
+  FINI avec 999 lunes (max) :
+  <ul>
+	<li>toutes les lunes/multilunes (836/836)</li>
+	<li>toutes les chapimorphoses (52/52)</li>
+	<li>tous les souvenirs (43/43)</li>
+	<li>toutes les musiques (82/82)</li>
+	<li>52 chapeaux et 52 tenues <!-- il en manque --></li>
+  </ul><br>
+  
+  <h4 class="game-title">Tetris 99</h4>
+  <u>Tetris 99</u> : 
+	<ul>
+		<li>Meilleur rang = 1er</li>
+		<li>Meilleure série = 9 victoires consécutives</li>
+	</ul>
+  <u>Tetris 99 Invictus</u> : 
+  	<ul>
+		<li>Meilleur rang = 1er</li>
+		<li>Meilleure série = 4 victoires en 5 parties</li>
+	</ul>
+  Icônes du joueur (hors icônes liés au niveau) : 97/100 obtenus<br><br>
+  
+  <h4 class="game-title">The Legend of Zelda : Breath of the Wild</h4>
+  FINI en <i>Normal</i> et en <i>Expert</i> avec pour ce dernier :
+  <ul>
+	<li>tous les sanctuaires terminés (120/120)</li>
+	<li>toutes les quêtes principales réussies (20/20)</li>
+	<li>toutes les missions réussies (90/90)</li>
+	<li>tous les souvenirs trouvés (18/18)</li>
+	<li>encyclopédie terminée (394/394 entrées)</li>
+	<li>tous les korogus trouvés (900/900)</li>
+	<li>tous les vêtements trouvés (hors amiibo) et upgradés au maximum</li>
+	<li>tous les objets spéciaux trouvés (dont filets/selles et médailles de Kilton)</li>
+	<li>carte finie à 100% (tous les donjons, sanctuaires, korogus et lieux trouvés)</li>
+	<li>toutes les épreuves de l'épée finies (épreuves <i>basique</i>, <i>moyenne</i> et <i>extrême</i>)</li>
+	<li>tous les DLC (2/2) terminés</i>
+  </ul>
+  <br>
+
+  <h4 class="game-title">The Legend of Zelda : Link's Awakening</h4>
+  FINI en <i>Normal</i> avec 0 morts<br><br>
+
+</div>
+
+
+
+
+
+<div id="SW2" class="console-container">
+
+  <h2 class="console-title">Switch 2</h2>
+  
+  <h4 class="game-title">Donkey Kong Bananza</h4>
+  FINI avec :
+  <ul>
+	<li>les 3 fins</li>
+	<li>1000 bananes (max)</li>
+	<li>777/777 cristaux de banandium</li>
+	<li>696/696 fossiles</li>
+    <li>110/110 disques</li>
+	<li>compétences au max</li>
+  </ul>
+  <br>
+
+  <h4 class="game-title">Mario Kart World</h4>
+  <u>Grand Prix</u> : Toutes les coupes (8/8) remportées avec 3 étoiles en <i>150cc</i> et <i>Miroir</i><br>
+  <u>Survie</u> : Tous les rallyes (8/8) remportés avec 3 étoiles en <i>150cc</i> et <i>Miroir</i><br>
+  <u>Contre-la-montre</u> : Tous les staff ghosts battus (30/30)<br>
+  <u>Balade</u> : 150/150 panneaux, 286/394 interrupteurs, 99/200 médaillons Peach<br>
+  Tous les personnages débloqués<br><br>
+  
+</div>
+
+
+
+<div id="PC" class="console-container">
+
+  <h2 class="console-title">PC</h2>
+
+  <h4 class="game-title">Age of Empires</h4>
+  <u>Campagne</u> : Toutes les campagnes finies<br><br>
+
+  <h4 class="game-title">Age of Empires II : The Age of Kings</h4>
+  <u>Campagnes</u> : Toutes les campagnes finies<br><br>
+  
+  <h4 class="game-title">Age of Empires II : Definitive Edition (Steam)</h4>
+  <u>Campagnes</u> : 209/209 campagnes finies en <i>Difficile</i> ou avec médaille d'or (jeu de base + 3 premiers DLC)<br>
+  201/201 succès (jeu de base + 3 premiers DLC)<br><br>
+
+  <h4 class="game-title">Brickblaster</h4>
+  FINI en <i>Normal</i> et en <i>Difficile</i><br><br>
+  <!-- Arcade Difficile : 114 610
+  fini avec 10 vies (level 40)
+  max de vies 12 (levels 33-36) -->
+
+  <h4 class="game-title">Celeste (Steam)</h4>
+  FINI avec 32/32 succès<br><br>
+  
+  <h4 class="game-title">Cookie Clicker</h4>
+  FINI avec :
+  <ul>
+	<li>toutes les upgrades (717/717)</li>
+	<li>tous les Heavenly Chips (129/129)</li>
+	<li>tous les achievements (622/622)</li>
+	<li>16/17 shadow achievements (tous sauf "Cheating")</li>
+  </ul><br>
+
+  <h4 class="game-title">Half-Life</h4>
+  FINI en <i>Facile</i><br><br>
+  
+  <h4 class="game-title">Limbo (Steam)</h4>
+  FINI avec 13/13 succès<br>
+  Record low death : 3 morts (56 minutes RTA)<br><br>
+  
+  <h4 class="game-title">Portal (Steam)</h4>
+  FINI avec 15/15 succès<br>
+  <u>Bonus maps - Advanced chambers</u> : toutes les salles (6/6) finies<br>
+  <u>Bonus maps - Challenges</u> : tous les défis (Least portals/Least steps/Least time) finis en or (18/18)<br>
+  <br>
+
+</div>
+
+</div>
+
+
+
+<script>
+function showTable(yearId) {
+    document.querySelectorAll('.table-container').forEach(t => t.style.display = 'none');
+    document.querySelectorAll('.year-block').forEach(b => b.classList.remove('active'));
+    document.getElementById(yearId).style.display = 'block';
+    document.querySelector(`.year-block[onclick="showTable('${yearId}')"]`).classList.add('active');
+}
+
+// Afficher le premier tableau par défaut
+showTable('2025-2029');
+</script>
+
+
+<script>
+function showConsole(consoleId) {
+    document.querySelectorAll('.console-container').forEach(t => t.style.display = 'none');
+    document.querySelectorAll('.console-block').forEach(b => b.classList.remove('active'));
+    document.getElementById(consoleId).style.display = 'block';
+    document.querySelector(`.console-block[onclick="showConsole('${consoleId}')"]`).classList.add('active');
+}
+
+// Afficher le premier tableau par défaut
+showConsole('GB');
+</script>
+
+
+
+
+<script>
+    function hideAll() {
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.display = 'none';
+        });
+    }
+
+    function showSection(number) {
+        hideAll();
+        document.getElementById('section' + number).style.display = 'block';
+    }
+
+    function showAll() {
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.display = 'block';
+        });
+    }
+
+    // affichage par défaut au chargement
+    showAll();
+</script>
+
+
+
+
+</body>
+</html>
